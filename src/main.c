@@ -17,6 +17,7 @@ void to_do(void)
 int main(int argc, char **argv, char **envp)
 {
     sfRenderWindow *window;
+
     if (argc == 2 && argv[1][0] == '-' && argv[1][1] == 'h') {
         to_do();
         return 0;

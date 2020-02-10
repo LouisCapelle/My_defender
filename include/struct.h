@@ -15,5 +15,13 @@ typedef struct display {
     sfTexture *texture;
     sfVector2f offset;
     sfVector2f pos;
-    sfVector2f pos_two;
-}display_t;
+} display_t;
+
+typedef struct menu_screen
+{
+    sfSprite *play_sprite;
+    sfTexture *play_texture;
+    sfSprite *quit_sprite;
+    sfTexture *quit_texture;
+    sfVector2f pos;
+} menu_t;

@@ -30,11 +30,13 @@
 
 /*src*/
 int my_defender(sfRenderWindow *window);
-int init_struct_display(display_t *display);
+sfRenderWindow *init_struct_display(display_t *display);
 void event_type(sfEvent event, sfRenderWindow *window);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
 int display_background(sfRenderWindow *window, display_t *display);
+int display_menu(sfRenderWindow *window, menu_t *screen);
+int init_screen_menu(sfRenderWindow *window, menu_t *screen);
 
 /*lib*/
 void redirect_all_stdout(void);

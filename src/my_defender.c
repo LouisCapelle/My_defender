@@ -7,18 +7,6 @@
 
 #include "my.h"
 
-sfRenderWindow *create_window(display_t *display)
-{
-    display->video_mode.width = 1200;
-    display->video_mode.height = 700;
-    display->video_mode.bitsPerPixel = 32;
-
-    display->window = sfRenderWindow_create(display->video_mode,
-                "MyWindow", sfResize | sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(display->window, 60);
-    return (display->window);
-}
-
 void event_type(sfEvent event, sfRenderWindow *window)
 {
     while (sfRenderWindow_pollEvent(window, &event)) {
@@ -27,23 +15,16 @@ void event_type(sfEvent event, sfRenderWindow *window)
     }
 }
 
-void set_game(display_t *display)
-{
-    sfSprite_setTexture(display->sprite, display->texture, sfFalse);
-}
-
 int my_defender(sfRenderWindow *window)
 {
     display_t *display = malloc(sizeof(display_t));
     sfEvent event;
     sfMusic *song;
+    menu_t *screen;
 
-    if (init_struct_display(display) == 84 || !display)
+    if (!display || !(window = init_struct_display(display)))
         return 84;
-    window = create_window(display);
-    if (!window)
-        return 84;
-    set_game(display);
+    init_screen_menu(window, screen);
     while (sfRenderWindow_isOpen(window)) {
         display_background(window, display);
         sfRenderWindow_display(window);
