@@ -34,6 +34,7 @@ int init_struct_display(display_t *display);
 void event_type(sfEvent event, sfRenderWindow *window);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
+int display_background(sfRenderWindow *window, display_t *display);
 
 /*lib*/
 void redirect_all_stdout(void);

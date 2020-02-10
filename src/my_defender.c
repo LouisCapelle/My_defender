@@ -27,6 +27,11 @@ void event_type(sfEvent event, sfRenderWindow *window)
     }
 }
 
+void set_game(display_t *display)
+{
+    sfSprite_setTexture(display->sprite, display->texture, sfFalse);
+}
+
 int my_defender(sfRenderWindow *window)
 {
     display_t *display = malloc(sizeof(display_t));
@@ -36,11 +41,11 @@ int my_defender(sfRenderWindow *window)
     if (init_struct_display(display) == 84 || !display)
         return 84;
     window = create_window(display);
-    if (!window) return 84;
-    sfSprite_setTexture(display->sprite, display->texture, sfFalse);
+    if (!window)
+        return 84;
+    set_game(display);
     while (sfRenderWindow_isOpen(window)) {
-        sfSprite_setPosition(display->sprite, display->pos);
-        sfRenderWindow_drawSprite(window, display->sprite, NULL);
+        display_background(window, display);
         sfRenderWindow_display(window);
         event_type(event, window);
     }

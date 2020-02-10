@@ -10,6 +10,7 @@ SRC	=	lib/my_putchar.c \
 		src/main.c \
 		src/my_defender.c \
 		src/init_struct.c \
+		src/display_background.c \
 
 CFLAGS	=	-I ./include
 
