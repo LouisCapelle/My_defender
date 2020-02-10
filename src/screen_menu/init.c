@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-sfRenderWindow *init_struct_display(display_t *display)
+sfRenderWindow *init_struct_display(display_t *display, utils_t *utils)
 {
     sfVector2f pos = {0, 0};
     sfVector2f offset = {5, 0};
@@ -20,21 +20,27 @@ sfRenderWindow *init_struct_display(display_t *display)
         return NULL;
     display->pos = pos;
     display->offset = offset;
-    display->video_mode.width = 1200;
-    display->video_mode.height = 700;
-    display->video_mode.bitsPerPixel = 32;
+    utils->video_mode.width = 1200;
+    utils->video_mode.height = 700;
+    utils->video_mode.bitsPerPixel = 32;
 
-    display->window = sfRenderWindow_create(display->video_mode,
+    utils->window = sfRenderWindow_create(utils->video_mode,
                 "MyDefender", sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(display->window, 60);
-    return (display->window);
+    sfRenderWindow_setFramerateLimit(utils->window, 60);
+    return (utils->window);
 }
 
-int init_screen_menu(sfRenderWindow *window, menu_t *screen)
+int init_screen_menu(utils_t *utils, menu_t *screen)
 {
     screen->play_texture = sfTexture_createFromFile
-                                    ("utils/imgs/play_button.png", NULL);
+                ("./utils/imgs/play_button.png", NULL);
+    screen->quit_texture = sfTexture_createFromFile
+                ("./utils/imgs/quit_button.png", NULL);
+    if (!screen->play_texture || !screen->quit_texture)
+        return 84;
     screen->play_sprite = sfSprite_create();
+    screen->quit_sprite = sfSprite_create();
     sfSprite_setTexture(screen->play_sprite, screen->play_texture, sfTrue);
-    display_menu(window, screen);
+    sfSprite_setTexture(screen->quit_sprite, screen->quit_texture, sfTrue);
+    return 0;
 }

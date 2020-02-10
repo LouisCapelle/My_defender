@@ -12,7 +12,7 @@ SRC	=	lib/my_putchar.c \
 		src/screen_menu/init.c \
 		src/screen_menu/display.c \
 
-CFLAGS	=	-I ./include
+CFLAGS	=	-I ./include -g
 
 OBJ	=	$(SRC:.c=.o)
 

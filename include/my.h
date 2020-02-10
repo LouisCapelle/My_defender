@@ -29,14 +29,14 @@
 #include "struct.h"
 
 /*src*/
-int my_defender(sfRenderWindow *window);
-sfRenderWindow *init_struct_display(display_t *display);
-void event_type(sfEvent event, sfRenderWindow *window);
+int my_defender(void);
+void event_type(sfEvent event, utils_t *utils);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
-int display_background(sfRenderWindow *window, display_t *display);
-int display_menu(sfRenderWindow *window, menu_t *screen);
-int init_screen_menu(sfRenderWindow *window, menu_t *screen);
+int display_background(utils_t *utils, display_t *display, menu_t *screen);
+int display_menu(utils_t *utils, menu_t *screen);
+int init_screen_menu(utils_t *utils, menu_t *screen);
+sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
 
 /*lib*/
 void redirect_all_stdout(void);

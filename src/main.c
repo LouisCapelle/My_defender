@@ -16,13 +16,11 @@ void to_do(void)
 
 int main(int argc, char **argv, char **envp)
 {
-    sfRenderWindow *window;
-
     if (argc == 2 && argv[1][0] == '-' && argv[1][1] == 'h') {
         to_do();
         return 0;
     }
-    if (my_defender(window) == 84) {
+    if (my_defender() == 84) {
         return 84;
     }
     return 0;
