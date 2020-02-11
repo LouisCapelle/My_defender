@@ -13,6 +13,7 @@ int display_background(utils_t *utils, display_t *display, menu_t *screen)
     sfSprite_setTexture(display->sprite, display->texture, sfFalse);
     sfSprite_setPosition(display->sprite, display->pos);
     sfRenderWindow_drawSprite(utils->window, display->sprite, NULL);
+    display_highlight(utils, screen, display);
     display_menu(utils, screen);
     return 0;
 }
@@ -35,4 +36,18 @@ int display_menu(utils_t *utils, menu_t *screen)
     sfRenderWindow_drawSprite(utils->window, screen->play_sprite, NULL);
     sfSprite_setPosition(screen->quit_sprite, screen->pos_quit);
     sfRenderWindow_drawSprite(utils->window, screen->quit_sprite, NULL);
+}
+
+int display_highlight(utils_t *utils, menu_t *screen, display_t *display)
+{
+    sfVector2i mouse_position = sfMouse_getPosition(utils->window);
+
+    if (mouse_position.y >= 476 && mouse_position.y <= 541
+            && mouse_position.x >= 483 && mouse_position.x <= 699) {
+        sfSprite_setTexture(screen->play_sprite,
+                            screen->play_texture_highlight, sfTrue);
+    } else {
+        sfSprite_setTexture(screen->play_sprite,
+                            screen->play_texture, sfTrue);
+    }
 }

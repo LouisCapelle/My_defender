@@ -37,6 +37,7 @@ int display_background(utils_t *utils, display_t *display, menu_t *screen);
 int display_menu(utils_t *utils, menu_t *screen);
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
+int display_highlight(utils_t *utils, menu_t *screen, display_t *display);
 
 /*lib*/
 void redirect_all_stdout(void);

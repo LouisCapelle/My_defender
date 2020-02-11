@@ -22,11 +22,13 @@ int my_defender(void)
     menu_t *screen = malloc(sizeof(menu_t));
     sfEvent event;
     sfMusic *song;
+    sfVector2i mouse_pos;
 
     if (!display || !(utils->window = init_struct_display(display, utils)))
         return 84;
     init_screen_menu(utils, screen);
     while (sfRenderWindow_isOpen(utils->window)) {
+        mouse_pos = sfMouse_getPosition(utils->window);
         display_background(utils, display, screen);
         init_screen_menu(utils, screen);
         sfRenderWindow_display(utils->window);

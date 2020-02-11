@@ -33,7 +33,9 @@ sfRenderWindow *init_struct_display(display_t *display, utils_t *utils)
 int init_screen_menu(utils_t *utils, menu_t *screen)
 {
     screen->play_texture = sfTexture_createFromFile
-                ("./utils/imgs/play_button.png", NULL);
+                ("./utils/imgs/play_button.jpg", NULL);
+    screen->play_texture_highlight = sfTexture_createFromFile
+                ("./utils/imgs/play_button_highlight.jpg", NULL);
     screen->quit_texture = sfTexture_createFromFile
                 ("./utils/imgs/quit_button.png", NULL);
     if (!screen->play_texture || !screen->quit_texture)

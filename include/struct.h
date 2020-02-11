@@ -23,8 +23,10 @@ typedef struct utils {
 typedef struct menu_screen {
     sfSprite *play_sprite;
     sfTexture *play_texture;
+    sfTexture *play_texture_highlight;
     sfSprite *quit_sprite;
     sfTexture *quit_texture;
+    sfTexture *quit_texture_highlight;
     sfVector2f pos_play;
     sfVector2f pos_quit;
 } menu_t;
