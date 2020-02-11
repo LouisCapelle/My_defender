@@ -13,8 +13,8 @@ int display_background(utils_t *utils, display_t *display, menu_t *screen)
     sfSprite_setTexture(display->sprite, display->texture, sfFalse);
     sfSprite_setPosition(display->sprite, display->pos);
     sfRenderWindow_drawSprite(utils->window, display->sprite, NULL);
-    display_highlight_play(utils, screen, display);
-    display_highlight_quit(utils, screen, display);
+    display_highlight_play(utils->window, screen, display);
+    display_highlight_quit(utils->window, screen, display);
     display_menu(utils, screen);
     return 0;
 }

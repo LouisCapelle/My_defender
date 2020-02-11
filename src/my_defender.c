@@ -7,14 +7,26 @@
 
 #include "my.h"
 
-void event_type(sfEvent event, utils_t *utils)
+int event_type(sfEvent event, utils_t *utils)
 {
-    while (sfRenderWindow_pollEvent(utils->window, &event)) {
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(utils->window);
-    }
-}
+    sfVector2i mouse_position = sfMouse_getPositionRenderWindow(utils->window);
 
+    while (sfRenderWindow_pollEvent(utils->window, &event)) {
+        if (event.type == sfEvtClosed)
+            sfRenderWindow_close(utils->window);
+        if ((mouse_position.y >= 476 && mouse_position.y <= 541)
+                && (mouse_position.x >= 483 && mouse_position.x <= 699)
+                && (event.type == sfEvtMouseButtonPressed)) {
+            printf("bite\n");
+        }
+        if ((mouse_position.y >= 574 && mouse_position.y <= 665)
+            && (mouse_position.x >= 475 && mouse_position.x <= 695)
+            && (event.type == sfEvtMouseButtonPressed)) {
+            return 1;
+        }
+    }
+    return 0;
+}
 int my_defender(void)
 {
     utils_t *utils = malloc(sizeof(utils_t));
@@ -28,11 +40,11 @@ int my_defender(void)
         return 84;
     init_screen_menu(utils, screen);
     while (sfRenderWindow_isOpen(utils->window)) {
-        mouse_pos = sfMouse_getPosition(utils->window);
         display_background(utils, display, screen);
         init_screen_menu(utils, screen);
         sfRenderWindow_display(utils->window);
-        event_type(event, utils);
+        if (event_type(event, utils) == 1)
+            return 0;
     }
     sfMusic_destroy(song);
     sfRenderWindow_destroy(utils->window);

@@ -30,3 +30,8 @@ typedef struct menu_screen {
     sfVector2f pos_play;
     sfVector2f pos_quit;
 } menu_t;
+
+
+/*typedef struct game {
+    game->
+}*/

@@ -30,15 +30,17 @@
 
 /*src*/
 int my_defender(void);
-void event_type(sfEvent event, utils_t *utils);
+int event_type(sfEvent event, utils_t *utils);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
 int display_background(utils_t *utils, display_t *display, menu_t *screen);
 int display_menu(utils_t *utils, menu_t *screen);
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
-int display_highlight_play(utils_t *utils, menu_t *screen, display_t *display);
-int display_highlight_quit(utils_t *utils, menu_t *screen, display_t *display);
+int display_highlight_play(sfRenderWindow *window, menu_t *screen,
+display_t *display);
+int display_highlight_quit(sfRenderWindow *window, menu_t *screen,
+display_t *display);
 
 /*lib*/
 void redirect_all_stdout(void);
