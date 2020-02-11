@@ -10,6 +10,7 @@ SRC	=	lib/my_putchar.c \
 		src/main.c \
 		src/my_defender.c \
 		src/screen_menu/init.c \
+		src/screen_menu/highlight.c \
 		src/screen_menu/display.c \
 
 CFLAGS	=	-I ./include -g
