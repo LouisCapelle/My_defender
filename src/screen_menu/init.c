@@ -48,3 +48,18 @@ int init_screen_menu(utils_t *utils, menu_t *screen)
     sfSprite_setTexture(screen->quit_sprite, screen->quit_texture, sfTrue);
     return 0;
 }
+
+int init_game(game_t *game)
+{
+    game->utils = malloc(sizeof(utils_t));
+    game->display = malloc(sizeof(display_t));
+    game->screen = malloc(sizeof(menu_t));
+    if (!game->utils || !game->display || !game->screen)
+        return 84;
+    if (!(game->utils->window
+                = init_struct_display(game->display, game->utils)))
+        return 84;
+    if (init_screen_menu(game->utils, game->screen))
+        return 84;
+    return 0;
+}

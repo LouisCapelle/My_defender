@@ -32,6 +32,8 @@ typedef struct menu_screen {
 } menu_t;
 
 
-/*typedef struct game {
-    game->
-}*/
+typedef struct game {
+    struct menu_screen *screen;
+    struct display *display;
+    struct utils *utils;
+} game_t;

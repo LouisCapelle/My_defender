@@ -33,14 +33,16 @@ int my_defender(void);
 int event_type(sfEvent event, utils_t *utils);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
-int display_background(utils_t *utils, display_t *display, menu_t *screen);
-int display_menu(utils_t *utils, menu_t *screen);
+int display_background(game_t *game);
+int display_menu(game_t *game);
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
 int display_highlight_play(sfRenderWindow *window, menu_t *screen,
 display_t *display);
 int display_highlight_quit(sfRenderWindow *window, menu_t *screen,
 display_t *display);
+int init_game(game_t *game);
+void clear_display(sfRenderWindow *window);
 
 /*lib*/
 void redirect_all_stdout(void);

@@ -5,3 +5,9 @@
 ** go_to_game
 */
 
+#include "my.h"
+
+void clear_display(sfRenderWindow *window)
+{
+    sfRenderWindow_clear(window, sfBlack);
+}
