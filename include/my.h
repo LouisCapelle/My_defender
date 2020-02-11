@@ -37,10 +37,8 @@ int display_background(game_t *game);
 int display_menu(game_t *game);
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
-int display_highlight_play(sfRenderWindow *window, menu_t *screen,
-display_t *display);
-int display_highlight_quit(sfRenderWindow *window, menu_t *screen,
-display_t *display);
+int display_highlight_play(game_t *game);
+int display_highlight_quit(game_t *game);
 int init_game(game_t *game);
 void clear_display(sfRenderWindow *window);
 
