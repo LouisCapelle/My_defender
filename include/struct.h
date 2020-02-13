@@ -36,4 +36,6 @@ typedef struct game {
     struct menu_screen *screen;
     struct display *display;
     struct utils *utils;
+    int is_alive;
+    int in_menu;
 } game_t;

@@ -54,6 +54,8 @@ int init_game(game_t *game)
     game->utils = malloc(sizeof(utils_t));
     game->display = malloc(sizeof(display_t));
     game->screen = malloc(sizeof(menu_t));
+    game->is_alive = 1;
+    game->in_menu = 1;
     if (!game->utils || !game->display || !game->screen)
         return 84;
     if (!(game->utils->window

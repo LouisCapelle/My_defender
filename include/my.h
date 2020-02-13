@@ -30,7 +30,7 @@
 
 /*src*/
 int my_defender(void);
-int event_type(sfEvent event, utils_t *utils);
+int event_type(sfEvent event, utils_t *utils, game_t *game);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
 int display_background(game_t *game);
@@ -41,6 +41,7 @@ int display_highlight_play(game_t *game);
 int display_highlight_quit(game_t *game);
 int init_game(game_t *game);
 void clear_display(sfRenderWindow *window);
+int navigation_controller(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);

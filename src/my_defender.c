@@ -7,19 +7,19 @@
 
 #include "my.h"
 
-int event_type(sfEvent event, utils_t *utils)
+int event_type(sfEvent event, utils_t *utils, game_t *game)
 {
     sfVector2i mouse_position = sfMouse_getPositionRenderWindow(utils->window);
 
     while (sfRenderWindow_pollEvent(utils->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(utils->window);
-        if ((mouse_position.y >= 476 && mouse_position.y <= 541)
+        if ((mouse_position.y >= 476 && mouse_position.y <= 541 && game->in_menu == 1)
                 && (mouse_position.x >= 483 && mouse_position.x <= 699)
                 && (event.type == sfEvtMouseButtonPressed)) {
-            clear_display(utils->window);
+            game->in_menu = 0;
         }
-        if ((mouse_position.y >= 574 && mouse_position.y <= 665)
+        if ((mouse_position.y >= 574 && mouse_position.y <= 665 && game->in_menu == 1)
             && (mouse_position.x >= 475 && mouse_position.x <= 695)
             && (event.type == sfEvtMouseButtonPressed)) {
             return 1;
@@ -27,6 +27,7 @@ int event_type(sfEvent event, utils_t *utils)
     }
     return 0;
 }
+
 int my_defender(void)
 {
     game_t *game = malloc(sizeof(game_t));
@@ -39,9 +40,9 @@ int my_defender(void)
     if (init_game(game) == 84)
         return 84;
     while (sfRenderWindow_isOpen(game->utils->window)) {
-        display_background(game);
+        navigation_controller(game);
         sfRenderWindow_display(game->utils->window);
-        if (event_type(event, game->utils) == 1)
+        if (event_type(event, game->utils, game) == 1)
             return 0;
     }
     sfMusic_destroy(song);
