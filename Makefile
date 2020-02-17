@@ -16,6 +16,7 @@ SRC	=	lib/my_putchar.c \
 		src/screen_menu/display.c \
 		src/pause_menu/highlight.c \
 		src/event_type.c \
+		src/pause_menu/text_pause.c \
 		src/pause_menu/pause_menu.c \
 
 CFLAGS	=	-I ./include -g

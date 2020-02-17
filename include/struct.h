@@ -38,6 +38,8 @@ typedef struct menu_pause {
     sfSprite *main_sprite;
     sfTexture *main_texture;
     sfTexture *main_texture_highlight;
+    sfFont *font;
+    sfText *pause_text;
 } menu_pause_t;
 
 
