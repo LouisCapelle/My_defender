@@ -19,9 +19,9 @@ int main(int argc, char **argv, char **envp)
     if (argc == 2 && argv[1][0] == '-' && argv[1][1] == 'h') {
         to_do();
         return 0;
-    }
-    if (my_defender() == 84) {
+    }else if (argc == 1){
+        return (my_defender());
+    }else{
         return 84;
     }
-    return 0;
 }
