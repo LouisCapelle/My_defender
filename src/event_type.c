@@ -14,6 +14,7 @@ int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game)
             && (mouse_position.x >= 483 && mouse_position.x <= 699)
             && (event.type == sfEvtMouseButtonPressed)) {
         game->in_menu = 0;
+        game->in_game = 1;
         return 0;
     }
     if ((mouse_position.y >= 574 && mouse_position.y <= 665
@@ -25,6 +26,16 @@ int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game)
     return 0;
 }
 
+int get_escape(game_t *game, sfEvent event)
+{
+    if (event.type == sfEvtKeyPressed && game->in_pause == 1
+        && sfKeyboard_isKeyPressed(sfKeyEscape)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 int event_type(sfEvent event, utils_t *utils, game_t *game)
 {
     sfVector2i mouse_position = sfMouse_getPositionRenderWindow(utils->window);
@@ -34,10 +45,15 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
             sfRenderWindow_close(utils->window);
         if (event_type_menu(event, mouse_position, game) == 1)
             return 1;
-        if (event.type == sfEvtKeyPressed && game->in_menu == 0
+        if (event.type == sfEvtKeyPressed && game->in_game == 1
             && sfKeyboard_isKeyPressed(sfKeyEscape)){
             game->in_pause = 1;
+            game->in_game = 0;
             return 0;
+        }
+        if (get_escape(game, event) == 1) {
+            game->in_pause = 0;
+            game->in_game = 1;
         }
     }
     return 0;

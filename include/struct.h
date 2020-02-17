@@ -38,8 +38,11 @@ typedef struct menu_pause {
     sfSprite *main_sprite;
     sfTexture *main_texture;
     sfTexture *main_texture_highlight;
+    sfSprite *back_sprite;
+    sfTexture *back_texture;
     sfFont *font;
     sfText *pause_text;
+    sfEvent event;
 } menu_pause_t;
 
 
@@ -51,4 +54,5 @@ typedef struct game {
     int is_alive;
     int in_menu;
     int in_pause;
+    int in_game;
 } game_t;
