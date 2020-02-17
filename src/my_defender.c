@@ -24,6 +24,9 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
             && (event.type == sfEvtMouseButtonPressed)) {
             return 1;
         }
+        if (event.type == sfKeyboard_isKeyPressed(sfKeyEscape)){
+            my_putchar('c');
+        }
     }
     return 0;
 }
