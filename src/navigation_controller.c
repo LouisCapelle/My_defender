@@ -12,7 +12,7 @@ int navigation_controller(game_t *game)
     if (game->in_menu == 1) {
         display_background(game);
     }else if (game->in_menu == 0) {
-        clear_display(game->utils->window);
+        menu_display(game->utils->window, game);
     }else {
         return (84);
     }

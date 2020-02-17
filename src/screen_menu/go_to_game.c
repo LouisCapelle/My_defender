@@ -7,7 +7,8 @@
 
 #include "my.h"
 
-void clear_display(sfRenderWindow *window)
+void menu_display(sfRenderWindow *window, game_t *game)
 {
     sfRenderWindow_clear(window, sfBlack);
+    display_game(window, game);
 }
