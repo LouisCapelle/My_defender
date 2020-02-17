@@ -38,4 +38,5 @@ typedef struct game {
     struct utils *utils;
     int is_alive;
     int in_menu;
+    int in_pause;
 } game_t;

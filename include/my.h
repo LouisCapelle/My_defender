@@ -43,6 +43,7 @@ int init_game(game_t *game);
 int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game);
 int navigation_controller(game_t *game);
 void display_game(sfRenderWindow *window, game_t *game);
+int pause_menu(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);

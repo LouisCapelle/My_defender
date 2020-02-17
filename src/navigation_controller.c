@@ -13,8 +13,9 @@ int navigation_controller(game_t *game)
         display_background(game);
     } else if (game->in_menu == 0) {
         display_game(game->utils->window, game);
-    } else {
-        return (84);
+    }
+    if (game->in_pause == 1) {
+        pause_menu(game);
     }
     return 0;
 }

@@ -36,7 +36,7 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
             return 1;
         if (event.type == sfEvtKeyPressed && game->in_menu == 0
             && sfKeyboard_isKeyPressed(sfKeyEscape)){
-            game->in_menu = 1;
+            game->in_pause = 1;
             return 0;
         }
     }
