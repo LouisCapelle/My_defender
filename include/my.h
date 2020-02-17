@@ -40,6 +40,7 @@ sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
 int display_highlight_play(game_t *game);
 int display_highlight_quit(game_t *game);
 int init_game(game_t *game);
+int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game);
 int navigation_controller(game_t *game);
 void display_game(sfRenderWindow *window, game_t *game);
 

@@ -14,6 +14,7 @@ SRC	=	lib/my_putchar.c \
 		src/navigation_controller.c \
 		src/game/display_game.c \
 		src/screen_menu/display.c \
+		src/event_type.c \
 
 CFLAGS	=	-I ./include -g
 
