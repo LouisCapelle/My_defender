@@ -31,11 +31,21 @@ typedef struct menu_screen {
     sfVector2f pos_quit;
 } menu_t;
 
+typedef struct menu_pause {
+    sfSprite *play_sprite;
+    sfTexture *play_texture;
+    sfTexture *play_texture_highlight;
+    sfSprite *main_sprite;
+    sfTexture *main_texture;
+    sfTexture *main_texture_highlight;
+} menu_pause_t;
+
 
 typedef struct game {
     struct menu_screen *screen;
     struct display *display;
     struct utils *utils;
+    struct menu_pause *menu_pause;
     int is_alive;
     int in_menu;
     int in_pause;
