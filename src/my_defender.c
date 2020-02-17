@@ -24,8 +24,10 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
             && (event.type == sfEvtMouseButtonPressed)) {
             return 1;
         }
-        if (event.type == sfKeyboard_isKeyPressed(sfKeyEscape)){
-            my_putchar('c');
+        if (event.type == sfEvtKeyPressed && game->in_menu == 0
+            && sfKeyboard_isKeyPressed(sfKeyEscape)){
+            printf("ma bite\n");
+            return 0;
         }
     }
     return 0;
@@ -35,7 +37,6 @@ int my_defender(void)
 {
     game_t *game = malloc(sizeof(game_t));
     sfEvent event;
-    sfMusic *song;
     sfVector2i mouse_pos;
 
     if (!game)
@@ -48,7 +49,6 @@ int my_defender(void)
         if (event_type(event, game->utils, game) == 1)
             return 0;
     }
-    sfMusic_destroy(song);
     sfRenderWindow_destroy(game->utils->window);
     return 0;
 }

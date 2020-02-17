@@ -40,7 +40,6 @@ sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
 int display_highlight_play(game_t *game);
 int display_highlight_quit(game_t *game);
 int init_game(game_t *game);
-void menu_display(sfRenderWindow *window, game_t *game);
 int navigation_controller(game_t *game);
 void display_game(sfRenderWindow *window, game_t *game);
 

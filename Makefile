@@ -12,7 +12,6 @@ SRC	=	lib/my_putchar.c \
 		src/screen_menu/init.c \
 		src/screen_menu/highlight.c \
 		src/navigation_controller.c \
-		src/screen_menu/go_to_game.c \
 		src/game/display_game.c \
 		src/screen_menu/display.c \
 
