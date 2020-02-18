@@ -48,6 +48,10 @@ typedef struct menu_pause {
 typedef struct terrain{
     sfSprite *background_sprite;
     sfTexture *background_texture;
+    sfSprite *tower1_sprite;
+    sfTexture *tower1_texture;
+    sfClock *clock;
+    int rotation;
     sfEvent event;
 } terrain_t;
 
