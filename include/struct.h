@@ -45,13 +45,21 @@ typedef struct menu_pause {
     sfEvent event;
 } menu_pause_t;
 
+typedef struct terrain{
+    sfSprite *background_sprite;
+    sfTexture *background_texture;
+    sfEvent event;
+} terrain_t;
+
 
 typedef struct game {
     struct menu_screen *screen;
     struct display *display;
     struct utils *utils;
     struct menu_pause *menu_pause;
+    struct terrain *terrain;
     int is_alive;
+    int money;
     int in_menu;
     int in_pause;
     int in_game;

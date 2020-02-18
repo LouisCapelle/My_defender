@@ -46,6 +46,7 @@ void display_game(sfRenderWindow *window, game_t *game);
 int pause_menu(game_t *game);
 int init_pause_menu(game_t *game);
 void init_text(game_t *game);
+void init_terrain(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);

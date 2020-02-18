@@ -55,10 +55,12 @@ int init_game(game_t *game)
     game->display = malloc(sizeof(display_t));
     game->screen = malloc(sizeof(menu_t));
     game->menu_pause = malloc(sizeof(menu_pause_t));
+    game->terrain = malloc(sizeof(terrain_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
     init_pause_menu(game);
+    init_terrain(game);
     if (!game->utils || !game->display || !game->screen)
         return 84;
     if (!(game->utils->window
