@@ -32,6 +32,23 @@ void init_terrain(game_t *game)
                         game->terrain->background_texture, sfTrue);
 }
 
+int init_enemys(game_t *game, sfClock *clock)
+{
+    sfVector2f pos  = {0, 470};
+    sfVector2f scale = {0.2, 0.2};
+
+    game->enemys->sprite = sfSprite_create();
+    game->enemys->texture = sfTexture_createFromFile
+    ("utils/imgs/Square.png", NULL);
+    sfSprite_setScale(game->enemys->sprite, scale);
+    sfSprite_setTexture(game->enemys->sprite, game->enemys->texture, sfTrue);
+    game->enemys->pos = pos;
+    if (sfSprite_getPosition(game->enemys->sprite).x >= 1200) {
+        sfSprite_setPosition(game->enemys->sprite, game->enemys->pos);
+    }
+    return 0;
+}
+
 void rotate_tower(game_t *game)
 {
     sfTime time;
@@ -43,7 +60,7 @@ void rotate_tower(game_t *game)
     if (seconds > 4.5) {
         if (position >= 3) {
             sfSprite_rotate(game->terrain->tower1_sprite, position - 0.1);
-        }else if (position >= -25) {
+        } else if (position >= -25) {
             sfSprite_rotate(game->terrain->tower1_sprite, position + 0.1);
         }
         sfClock_restart(game->terrain->clock);
@@ -58,4 +75,5 @@ void display_game(sfRenderWindow *window, game_t *game)
     rotate_tower(game);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->terrain->tower1_sprite, NULL);
+    move_enemys(game, game->display->clock);
 }

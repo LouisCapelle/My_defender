@@ -45,8 +45,11 @@ int navigation_controller(game_t *game);
 void display_game(sfRenderWindow *window, game_t *game);
 int pause_menu(game_t *game);
 int init_pause_menu(game_t *game);
+int init_enemys(game_t *game, sfClock *clock);
 void init_text(game_t *game);
 void init_terrain(game_t *game);
+int move_enemys(game_t *game, sfClock *clock);
+int move_enemys_two(game_t *game, sfClock *clock);
 
 /*lib*/
 void redirect_all_stdout(void);

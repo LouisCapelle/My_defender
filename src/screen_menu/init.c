@@ -56,6 +56,7 @@ int init_game(game_t *game)
     game->screen = malloc(sizeof(menu_t));
     game->menu_pause = malloc(sizeof(menu_pause_t));
     game->terrain = malloc(sizeof(terrain_t));
+    game->enemys = malloc(sizeof(enemys_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
@@ -68,5 +69,6 @@ int init_game(game_t *game)
         return 84;
     if (init_screen_menu(game->utils, game->screen))
         return 84;
+    init_enemys(game, game->display->clock);
     return 0;
 }

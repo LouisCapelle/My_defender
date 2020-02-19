@@ -55,8 +55,17 @@ typedef struct terrain{
     sfEvent event;
 } terrain_t;
 
+typedef struct enemys {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfClock *clock;
+    sfIntRect rect;
+    sfVector2f pos;
+    sfVector2f offset;
+} enemys_t;
 
 typedef struct game {
+    struct enemys *enemys;
     struct menu_screen *screen;
     struct display *display;
     struct utils *utils;
