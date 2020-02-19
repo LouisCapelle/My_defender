@@ -43,9 +43,6 @@ int init_enemys(game_t *game, sfClock *clock)
     sfSprite_setScale(game->enemys->sprite, scale);
     sfSprite_setTexture(game->enemys->sprite, game->enemys->texture, sfTrue);
     game->enemys->pos = pos;
-    if (sfSprite_getPosition(game->enemys->sprite).x >= 1200) {
-        sfSprite_setPosition(game->enemys->sprite, game->enemys->pos);
-    }
     return 0;
 }
 
@@ -76,4 +73,5 @@ void display_game(sfRenderWindow *window, game_t *game)
     sfRenderWindow_drawSprite(game->utils->window,
                             game->terrain->tower1_sprite, NULL);
     move_enemys(game, game->display->clock);
+    init_castle(game);
 }

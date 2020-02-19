@@ -50,6 +50,8 @@ void init_text(game_t *game);
 void init_terrain(game_t *game);
 int move_enemys(game_t *game, sfClock *clock);
 int move_enemys_two(game_t *game, sfClock *clock);
+int move_enemies_two(game_t *game, sfClock *clock, int x, int y);
+int init_castle(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);
