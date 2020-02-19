@@ -19,6 +19,7 @@ int my_defender(void)
         return 84;
     while (sfRenderWindow_isOpen(game->utils->window)) {
         navigation_controller(game);
+        init_settings(game);
         sfRenderWindow_display(game->utils->window);
         if (event_type(event, game->utils, game) == 1)
             return 0;
