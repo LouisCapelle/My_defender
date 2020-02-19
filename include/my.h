@@ -29,29 +29,47 @@
 #include "struct.h"
 
 /*src*/
+
+/* init essentials */
+int init_screen_menu(utils_t *utils, menu_t *screen);
+sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
+int init_game(game_t *game);
+
+/* essentials */
+
 int my_defender(void);
 int event_type(sfEvent event, utils_t *utils, game_t *game);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
 int display_background(game_t *game);
 int display_menu(game_t *game);
-int init_screen_menu(utils_t *utils, menu_t *screen);
-sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
-int display_highlight_play(game_t *game);
-int display_highlight_quit(game_t *game);
-int init_game(game_t *game);
-int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game);
 int navigation_controller(game_t *game);
 void display_game(sfRenderWindow *window, game_t *game);
+
+/* welcome menu */
+int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game);
+int display_highlight_play(game_t *game);
+int display_highlight_quit(game_t *game);
+
+/* pause menu */
 int pause_menu(game_t *game);
 int init_pause_menu(game_t *game);
-int init_enemys(game_t *game, sfClock *clock);
 void init_text(game_t *game);
+
+/* terrain */
 void init_terrain(game_t *game);
+
+/* enemys */
 int move_enemys(game_t *game, sfClock *clock);
 int move_enemys_two(game_t *game, sfClock *clock);
+
 int move_enemies_two(game_t *game, sfClock *clock, int x, int y);
 int init_castle(game_t *game);
+int init_enemys(game_t *game, sfClock *clock);
+
+/* towers */
+void rotate_tower(game_t *game);
+void init_towers(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);
