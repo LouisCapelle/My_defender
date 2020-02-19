@@ -35,7 +35,7 @@ int move_enemies_two(game_t *game, sfClock *clock, int x, int y)
     if (y >= 286 && x >= 712 && x < 1200) {
         game->enemys->pos.x = game->enemys->pos.x + 2;
     }
-    if (sfSprite_getPosition(game->enemys->sprite).x >= 1200) {
+    if (sfSprite_getPosition(game->enemys->sprite).x >= 990) {
         game->enemys->pos.x = 0;
         game->enemys->pos.y = 470;
         sfSprite_setPosition(game->enemys->sprite, game->enemys->pos);

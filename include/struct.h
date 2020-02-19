@@ -31,6 +31,12 @@ typedef struct menu_screen {
     sfVector2f pos_quit;
 } menu_t;
 
+typedef struct settings {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f pos;
+} settings_t;
+
 typedef struct menu_pause {
     sfSprite *play_sprite;
     sfTexture *play_texture;
@@ -72,6 +78,7 @@ typedef struct game {
     struct enemys *enemys;
     struct menu_screen *screen;
     struct display *display;
+    struct settings *settings;
     struct utils *utils;
     struct menu_pause *menu_pause;
     struct terrain *terrain;
@@ -80,4 +87,5 @@ typedef struct game {
     int in_menu;
     int in_pause;
     int in_game;
+    int in_settings;
 } game_t;

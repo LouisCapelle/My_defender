@@ -58,18 +58,15 @@ int init_game(game_t *game)
     game->terrain = malloc(sizeof(terrain_t));
     game->enemys = malloc(sizeof(enemys_t));
     game->castle = malloc(sizeof(castle_t));
+    game->settings = malloc(sizeof(settings_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
+    game->in_settings = 0;
+    game->utils->window = init_struct_display(game->display, game->utils);
     init_pause_menu(game);
     init_terrain(game);
-    if (!game->utils || !game->display || !game->screen)
-        return 84;
-    if (!(game->utils->window
-                = init_struct_display(game->display, game->utils)))
-        return 84;
-    if (init_screen_menu(game->utils, game->screen))
-        return 84;
+    init_screen_menu(game->utils, game->screen);
     init_enemys(game, game->display->clock);
     init_castle(game);
     return 0;

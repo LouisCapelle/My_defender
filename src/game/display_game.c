@@ -25,7 +25,7 @@ int init_enemys(game_t *game, sfClock *clock)
 
     game->enemys->sprite = sfSprite_create();
     game->enemys->texture = sfTexture_createFromFile
-    ("utils/imgs/Square.png", NULL);
+            ("utils/imgs/Square.png", NULL);
     sfSprite_setScale(game->enemys->sprite, scale);
     sfSprite_setTexture(game->enemys->sprite, game->enemys->texture, sfTrue);
     game->enemys->pos = pos;

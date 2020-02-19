@@ -66,6 +66,8 @@ int move_enemys_two(game_t *game, sfClock *clock);
 int move_enemies_two(game_t *game, sfClock *clock, int x, int y);
 int init_castle(game_t *game);
 int init_enemys(game_t *game, sfClock *clock);
+int init_settings(game_t *game);
+int display_settings(game_t *game);
 
 /* towers */
 void rotate_tower(game_t *game);
