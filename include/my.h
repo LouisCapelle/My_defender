@@ -62,6 +62,9 @@ void init_terrain(game_t *game);
 /* enemys */
 int move_enemys(game_t *game, sfClock *clock);
 int move_enemys_two(game_t *game, sfClock *clock);
+
+int move_enemies_two(game_t *game, sfClock *clock, int x, int y);
+int init_castle(game_t *game);
 int init_enemys(game_t *game, sfClock *clock);
 
 /* towers */
