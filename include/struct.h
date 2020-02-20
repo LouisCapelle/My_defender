@@ -34,7 +34,12 @@ typedef struct menu_screen {
 typedef struct settings {
     sfSprite *sprite;
     sfTexture *texture;
+    sfSprite *esc_sprite;
+    sfTexture *esc_texture;
+    sfText *esc_text;
     sfVector2f pos;
+    sfVector2f pos_esc;
+    sfVector2f pos_text;
 } settings_t;
 
 typedef struct menu_pause {
