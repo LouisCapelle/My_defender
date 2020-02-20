@@ -24,6 +24,10 @@ int init_settings(game_t *game)
 
 int display_settings(game_t *game)
 {
+    sfVector2f scale = {1.5, 1.5};
+
+    sfSprite_setScale(game->menu_pause->back_sprite, scale);
     sfRenderWindow_clear(game->utils->window, sfBlack);
-    sfRenderWindow_drawSprite(game->utils->window, game->display->sprite, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+        game->menu_pause->back_sprite, NULL);
 }
