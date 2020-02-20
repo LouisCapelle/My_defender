@@ -7,6 +7,19 @@
 
 #include "my.h"
 
+int display_highlight_settings(game_t *game, sfVector2i position)
+{
+    if ((position.x >= 1100 && position.x <= 1160
+        && game->in_game == 1)
+        && (position.y >= 35 && position.y <= 82)) {
+        sfSprite_setTexture(game->settings->sprite,
+                        game->settings->highlight, sfTrue);
+    }else {
+        sfSprite_setTexture(game->settings->sprite,
+                        game->settings->texture, sfTrue);
+    }
+}
+
 void init_terrain(game_t *game)
 {
     init_towers(game);
@@ -49,12 +62,15 @@ int init_castle(game_t *game)
 
 void display_game(sfRenderWindow *window, game_t *game)
 {
+    sfVector2i position = sfMouse_getPositionRenderWindow(game->utils->window);
+
     sfRenderWindow_clear(window, sfBlack);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->terrain->background_sprite, NULL);
     rotate_tower(game);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->terrain->tower1_sprite, NULL);
+    display_highlight_settings(game, position);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->sprite, NULL);
     move_enemys(game, game->display->clock);
