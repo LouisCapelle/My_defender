@@ -20,7 +20,7 @@ void rotate_tower(game_t *game)
         if (seconds < 32){
             sfSprite_rotate(game->terrain->tower1_sprite, 0.5);
         }
-        if (seconds > 31){
+        if (seconds > 34){
             seconds = 0;
             game->terrain->go_to_base = 1;
             game->terrain->go_to_zero = 0;
@@ -34,7 +34,7 @@ void rotate_tower(game_t *game)
         if (seconds < 32){
             sfSprite_rotate(game->terrain->tower1_sprite, -0.5);
         }
-        if (seconds > 31){
+        if (seconds > 34){
             seconds = 0;
             game->terrain->go_to_base = 0;
             game->terrain->go_to_zero = 1;
@@ -57,5 +57,5 @@ void init_towers(game_t *game)
                         game->terrain->tower1_texture, sfTrue);
     sfSprite_setPosition(game->terrain->tower1_sprite, pos_tower1);
     sfSprite_setOrigin(game->terrain->tower1_sprite, origin);
-    sfSprite_setRotation(game->terrain->tower1_sprite, 280);
+    sfSprite_setRotation(game->terrain->tower1_sprite, 300);
 }
