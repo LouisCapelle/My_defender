@@ -58,6 +58,8 @@ typedef struct terrain{
     sfTexture *tower1_texture;
     sfClock *clock;
     int rotation;
+    int go_to_zero;
+    int go_to_base;
     sfEvent event;
 } terrain_t;
 
