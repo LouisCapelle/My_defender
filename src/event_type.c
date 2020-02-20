@@ -92,7 +92,7 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
             sfRenderWindow_close(utils->window);
         if (event_type_menu(event, mouse_position, game) == 1
             || event_type_pause(event, mouse_position, game) == 1){
-
+            return 1;
         }
         event_type_settings(event, mouse_position, game);
         get_escape(game, event);
