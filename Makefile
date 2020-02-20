@@ -22,6 +22,7 @@ SRC	=	lib/my_putchar.c \
 		src/settings/settings.c \
 		src/game/move_rect.c \
 		src/game/display_game_two.c \
+		src/sound/sound.c \
 
 CFLAGS	=	-I ./include -g
 

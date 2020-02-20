@@ -82,4 +82,7 @@ void redirect_all_stdout(void);
 int my_putchar(char c);
 int my_putstr(char const *str);
 
+/*sound*/
+int music_game(game_t *game);
+
 #endif /* !MY_H */

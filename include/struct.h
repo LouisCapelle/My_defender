@@ -18,6 +18,7 @@ typedef struct display {
 typedef struct utils {
     sfRenderWindow *window;
     sfVideoMode video_mode;
+    sfMusic *song;
 } utils_t;
 
 typedef struct menu_screen {
