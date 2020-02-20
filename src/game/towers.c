@@ -45,8 +45,8 @@ void rotate_tower(game_t *game)
 
 void init_towers(game_t *game)
 {
-    sfVector2f pos_tower1 = {330, 540};
     sfVector2f origin = {64, 64};
+    sfVector2f pos_tower1 = {330, 540};
 
     game->terrain->go_to_base = 0;
     game->terrain->go_to_zero = 1;
@@ -55,7 +55,7 @@ void init_towers(game_t *game)
                                 ("./utils/imgs/tower1.png", NULL);
     sfSprite_setTexture(game->terrain->tower1_sprite,
                         game->terrain->tower1_texture, sfTrue);
-    sfSprite_setPosition(game->terrain->tower1_sprite, pos_tower1);
     sfSprite_setOrigin(game->terrain->tower1_sprite, origin);
+    sfSprite_setPosition(game->terrain->tower1_sprite, pos_tower1);
     sfSprite_setRotation(game->terrain->tower1_sprite, 300);
 }
