@@ -63,9 +63,15 @@ int init_game(game_t *game)
     game->in_menu = 1;
     game->in_pause = 0;
     game->in_settings = 0;
+    init_game_two(game);
+    return 0;
+}
+
+int init_game_two(game_t *game)
+{
     game->utils->window = init_struct_display(game->display, game->utils);
     game->settings->highlight = sfTexture_createFromFile
-                ("utils/imgs/settings_highlight.png", NULL);
+        ("utils/imgs/settings_highlight.png", NULL);
     init_pause_menu(game);
     init_terrain(game);
     init_screen_menu(game->utils, game->screen);

@@ -34,6 +34,7 @@
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
 int init_game(game_t *game);
+int init_game_two(game_t *game);
 
 /* essentials */
 
