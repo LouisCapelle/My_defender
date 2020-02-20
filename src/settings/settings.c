@@ -17,6 +17,7 @@ int init_settings(game_t *game)
     game->settings->texture = sfTexture_createFromFile
             ("utils/imgs/settings.png", NULL);
     game->settings->esc_sprite = sfSprite_create();
+    game->settings->font = sfFont_createFromFile("./utils/font/arial.ttf");
     game->settings->esc_texture = sfTexture_createFromFile
             ("utils/imgs/esc.jpeg", NULL);
     game->settings->esc_text = sfText_create();
@@ -39,7 +40,7 @@ int display_settings(game_t *game)
     sfSprite_setScale(game->menu_pause->back_sprite, scale);
     sfSprite_setScale(game->settings->esc_sprite, scale_esc);
     sfRenderWindow_clear(game->utils->window, sfBlack);
-    sfText_setFont(game->settings->esc_text, game->menu_pause->font);
+    sfText_setFont(game->settings->esc_text, game->settings->font);
     sfText_setCharacterSize(game->settings->esc_text, 30);
     sfText_setString(game->settings->esc_text, "In the game menu, you access to the pause menu\n In the settings menu you come back to the game !");
     sfText_setPosition(game->settings->esc_text, pos_text);
