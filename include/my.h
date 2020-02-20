@@ -33,6 +33,7 @@
 /* init essentials */
 int init_screen_menu(utils_t *utils, menu_t *screen);
 sfRenderWindow *init_struct_display(display_t *display, utils_t *utils);
+int display_settings_menu(game_t *game);
 int init_game(game_t *game);
 int init_game_two(game_t *game);
 
@@ -68,11 +69,12 @@ int init_castle(game_t *game);
 int init_enemys(game_t *game, sfClock *clock);
 
 /* setting */
-int init_settings(game_t *game);
+void init_settings(game_t *game);
 int display_settings(game_t *game);
 
 /* towers */
 void rotate_tower(game_t *game);
+void rotate_tower_two(game_t *game, sfTime time, float seconds);
 void init_towers(game_t *game);
 
 /*lib*/

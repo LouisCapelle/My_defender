@@ -8,6 +8,24 @@
 #include "my.h"
 #include <time.h>
 
+void rotate_tower_two(game_t *game, sfTime time, float seconds)
+{
+    if (game->terrain->go_to_base == 1){
+
+        time = sfClock_getElapsedTime(game->terrain->clock);
+        seconds = time.microseconds / 100000.0;
+        if (seconds < 32){
+            sfSprite_rotate(game->terrain->tower1_sprite, -0.5);
+        }
+        if (seconds > 34){
+            seconds = 0;
+            game->terrain->go_to_base = 0;
+            game->terrain->go_to_zero = 1;
+            sfClock_restart(game->terrain->clock);
+        }
+    }
+}
+
 void rotate_tower(game_t *game)
 {
     sfTime time;
@@ -27,20 +45,7 @@ void rotate_tower(game_t *game)
             sfClock_restart(game->terrain->clock);
         }
     }
-    if (game->terrain->go_to_base == 1){
-
-        time = sfClock_getElapsedTime(game->terrain->clock);
-        seconds = time.microseconds / 100000.0;
-        if (seconds < 32){
-            sfSprite_rotate(game->terrain->tower1_sprite, -0.5);
-        }
-        if (seconds > 34){
-            seconds = 0;
-            game->terrain->go_to_base = 0;
-            game->terrain->go_to_zero = 1;
-            sfClock_restart(game->terrain->clock);
-        }
-    }
+    rotate_tower_two(game, time, seconds);
 }
 
 void init_towers(game_t *game)

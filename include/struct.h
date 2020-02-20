@@ -37,6 +37,7 @@ typedef struct settings {
     sfSprite *esc_sprite;
     sfTexture *esc_texture;
     sfText *esc_text;
+    sfText *esc_text_two;
     sfVector2f pos;
     sfVector2f pos_esc;
     sfVector2f pos_text;
