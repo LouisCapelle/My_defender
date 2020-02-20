@@ -18,7 +18,6 @@ void rotate_tower(game_t *game)
         time = sfClock_getElapsedTime(game->terrain->clock);
         seconds = time.microseconds / 100000.0;
         if (seconds < 32){
-            printf("%f\n", seconds);
             sfSprite_rotate(game->terrain->tower1_sprite, 0.5);
         }
         if (seconds > 31){
@@ -33,7 +32,6 @@ void rotate_tower(game_t *game)
         time = sfClock_getElapsedTime(game->terrain->clock);
         seconds = time.microseconds / 100000.0;
         if (seconds < 32){
-            printf("%f\n", seconds);
             sfSprite_rotate(game->terrain->tower1_sprite, -0.5);
         }
         if (seconds > 31){
