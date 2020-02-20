@@ -7,12 +7,6 @@
 
 #include "my.h"
 
-int display_settings(game_t *game)
-{
-    sfRenderWindow_clear(game->utils->window, sfBlack);
-    return 0;
-}
-
 int display_background(game_t *game)
 {
     sfRenderWindow_clear(game->utils->window, sfBlack);

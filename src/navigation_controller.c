@@ -17,5 +17,8 @@ int navigation_controller(game_t *game)
     if (game->in_pause == 1 && game->in_game == 0) {
         pause_menu(game);
     }
+    if (game->in_settings == 1 && game->in_game == 0) {
+        display_settings(game);
+    }
     return 0;
 }

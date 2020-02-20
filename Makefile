@@ -19,6 +19,7 @@ SRC	=	lib/my_putchar.c \
 		src/pause_menu/text_pause.c \
 		src/pause_menu/pause_menu.c \
 		src/game/towers.c \
+		src/settings/settings.c \
 		src/game/move_rect.c \
 		src/game/display_game_two.c \
 
