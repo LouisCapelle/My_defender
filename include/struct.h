@@ -35,6 +35,7 @@ typedef struct settings {
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2f pos;
+    sfTexture *highlight;
 } settings_t;
 
 typedef struct menu_pause {
