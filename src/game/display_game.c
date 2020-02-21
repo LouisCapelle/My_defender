@@ -22,38 +22,29 @@ int display_highlight_settings(game_t *game, sfVector2i position)
 
 void init_terrain(game_t *game)
 {
+    sfVector2f scale = {0.65, 0.65};
+
     init_towers(game);
     game->terrain->clock = sfClock_create();
     game->terrain->background_sprite = sfSprite_create();
     game->terrain->background_texture = sfTexture_createFromFile
-                                    ("./utils/imgs/terrain.jpg", NULL);
+                                    ("./utils/imgs/terrain.png", NULL);
+    sfSprite_setScale(game->terrain->background_sprite, scale);
     sfSprite_setTexture(game->terrain->background_sprite,
                         game->terrain->background_texture, sfTrue);
-}
-
-int init_enemys(game_t *game, sfClock *clock)
-{
-    sfVector2f pos  = {0, 470};
-    sfVector2f scale = {0.2, 0.2};
-
-    game->enemys->sprite = sfSprite_create();
-    game->enemys->texture = sfTexture_createFromFile
-            ("utils/imgs/Square.png", NULL);
-    sfSprite_setScale(game->enemys->sprite, scale);
-    sfSprite_setTexture(game->enemys->sprite, game->enemys->texture, sfTrue);
-    game->enemys->pos = pos;
-    return 0;
 }
 
 int init_castle(game_t *game)
 {
     sfVector2f pos = {980, 180};
-    sfVector2f scale = {0.1, 0.1};
+    sfVector2f scale = {0.5, 0.5};
 
     game->castle->sprite = sfSprite_create();
     game->castle->texture = sfTexture_createFromFile
             ("utils/imgs/castle.jpeg", NULL);
-    sfSprite_setScale(game->enemys->sprite, scale);
+    sfSprite_setScale(game->enemies_one->sprite, scale);
+    sfSprite_setScale(game->enemies_two->sprite, scale);
+    sfSprite_setScale(game->enemies_three->sprite, scale);
     sfSprite_setTexture(game->castle->sprite, game->castle->texture, sfTrue);
     sfSprite_setPosition(game->castle->sprite, pos);
     sfRenderWindow_drawSprite(game->utils->window, game->castle->sprite, NULL);
@@ -73,6 +64,8 @@ void display_game(sfRenderWindow *window, game_t *game)
     display_highlight_settings(game, position);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->sprite, NULL);
-    move_enemys(game, game->display->clock);
+    move_enemies_one(game, game->display->clock);
+    move_enemies_two(game, game->display->clock);
+    move_enemies_three(game, game->display->clock);
     init_castle(game);
 }

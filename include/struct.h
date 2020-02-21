@@ -72,12 +72,6 @@ typedef struct terrain{
     sfEvent event;
 } terrain_t;
 
-typedef struct enemys {
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfVector2f pos;
-} enemys_t;
-
 typedef struct castle {
     sfSprite *sprite;
     sfTexture *texture;
@@ -86,7 +80,9 @@ typedef struct castle {
 
 typedef struct game {
     struct castle *castle;
-    struct enemys *enemys;
+    struct enemies_one *enemies_one;
+    struct enemies_two *enemies_two;
+    struct enemies_two *enemies_three;
     struct menu_screen *screen;
     struct display *display;
     struct settings *settings;

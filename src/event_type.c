@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2020
-** event_type
+** event
 ** File description:
-** event_type
+** event
 */
 
 #include "my.h"

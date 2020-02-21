@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "struct.h"
+#include "struct_enemies.h"
 
 /*src*/
 
@@ -62,11 +63,17 @@ void init_text(game_t *game);
 void init_terrain(game_t *game);
 
 /* enemys */
-int move_enemys(game_t *game, sfClock *clock);
-int move_enemys_two(game_t *game, sfClock *clock);
-int move_enemies_two(game_t *game, sfClock *clock, int x, int y);
+int move_enemies_one_next(game_t *game, sfClock *clock, int x, int y);
+int move_enemies_one(game_t *game, sfClock *clock);
+int move_enemies_two(game_t *game, sfClock *clock);
+int move_enemies_two_next(game_t *game, sfClock *clock, int x, int y);
 int init_castle(game_t *game);
-int init_enemys(game_t *game, sfClock *clock);
+int init_enemies(game_t *game, sfClock *clock);
+int init_enemies_two(game_t *game, sfClock *clock);
+int init_enemies_one(game_t *game, sfClock *clock);
+int init_enemies_three(game_t *game, sfClock *clock);
+int move_enemies_three(game_t *game, sfClock *clock);
+int move_enemies_three_next(game_t *game, sfClock *clock, int x, int y);
 
 /* setting */
 void init_settings(game_t *game);

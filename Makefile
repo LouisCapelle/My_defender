@@ -20,9 +20,10 @@ SRC	=	lib/my_putchar.c \
 		src/pause_menu/pause_menu.c \
 		src/game/towers.c \
 		src/settings/settings.c \
-		src/game/move_rect.c \
-		src/game/display_game_two.c \
+		src/game/enemies/move_enemies.c \
 		src/sound/sound.c \
+		src/game/enemies/display_enemies.c \
+		src/game/enemies/move_enemies_next.c \
 
 CFLAGS	=	-I ./include -g
 

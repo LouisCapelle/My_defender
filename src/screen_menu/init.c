@@ -56,7 +56,9 @@ int init_game(game_t *game)
     game->screen = malloc(sizeof(menu_t));
     game->menu_pause = malloc(sizeof(menu_pause_t));
     game->terrain = malloc(sizeof(terrain_t));
-    game->enemys = malloc(sizeof(enemys_t));
+    game->enemies_one = malloc(sizeof(enemies_one_t));
+    game->enemies_two = malloc(sizeof(enemies_two_t));
+    game->enemies_three = malloc(sizeof(enemies_three_t));
     game->castle = malloc(sizeof(castle_t));
     game->settings = malloc(sizeof(settings_t));
     game->is_alive = 1;
@@ -75,7 +77,9 @@ int init_game_two(game_t *game)
     init_pause_menu(game);
     init_terrain(game);
     init_screen_menu(game->utils, game->screen);
-    init_enemys(game, game->display->clock);
+    init_enemies_one(game, game->display->clock);
+    init_enemies_two(game, game->display->clock);
+    init_enemies_three(game, game->display->clock);
     init_castle(game);
     return 0;
 }
