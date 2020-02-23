@@ -9,10 +9,10 @@
 
 int set_position(game_t *game)
 {
-    sfVector2f pos_play = {435, 450};
-    sfVector2f pos_main = {435, 550};
+    sfVector2f pos_play = {435, 430};
+    sfVector2f pos_main = {435, 580};
     sfVector2f scale = {1.5, 1.5};
-    sfVector2f scale_button = {0.855, 0.855};
+    sfVector2f scale_button = {0.8, 0.8};
 
     sfSprite_setScale(game->menu_pause->back_sprite, scale);
     sfSprite_setScale(game->menu_pause->main_sprite, scale_button);
@@ -23,7 +23,7 @@ int set_position(game_t *game)
 int init_pause_menu(game_t *game)
 {
     game->menu_pause->play_texture = sfTexture_createFromFile
-                            ("./utils/imgs/play_button.jpg", NULL);
+                            ("./utils/imgs/start.png", NULL);
     game->menu_pause->main_texture = sfTexture_createFromFile
                             ("./utils/imgs/main_menu.png", NULL);
     game->menu_pause->back_texture = sfTexture_createFromFile

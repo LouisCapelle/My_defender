@@ -23,14 +23,14 @@ int display_menu(game_t *game)
 {
     sfVector2f scale_play;
     sfVector2f scale_quit;
-    scale_play.x = 0.6;
-    scale_play.y = 0.9;
+    scale_play.x = 0.73;
+    scale_play.y = 0.73;
     scale_quit.x = 0.73;
     scale_quit.y = 0.73;
-    game->screen->pos_play.x = 480;
+    game->screen->pos_play.x = 470;
     game->screen->pos_play.y = 470;
     game->screen->pos_quit.x = 470;
-    game->screen->pos_quit.y = 570;
+    game->screen->pos_quit.y = 590;
     sfSprite_setScale(game->screen->play_sprite, scale_play);
     sfSprite_setScale(game->screen->quit_sprite, scale_quit);
     sfSprite_setPosition(game->screen->play_sprite, game->screen->pos_play);
