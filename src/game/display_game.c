@@ -36,13 +36,13 @@ void init_terrain(game_t *game)
 
 int init_castle(game_t *game)
 {
-    sfVector2f pos = {1220, 230};
+    sfVector2f pos = {1250, 230};
     sfVector2f scale = {0.4, 0.4};
-    sfVector2f scale_castle = {0.4, 0.4};
+    sfVector2f scale_castle = {1.25, 1.25};
 
     game->castle->sprite = sfSprite_create();
     game->castle->texture = sfTexture_createFromFile
-            ("utils/imgs/Chateau1.png", NULL);
+            ("utils/imgs/castle.png", NULL);
     sfSprite_setScale(game->enemies_one->sprite, scale);
     sfSprite_setScale(game->enemies_two->sprite, scale);
     sfSprite_setScale(game->enemies_three->sprite, scale);
