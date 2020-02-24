@@ -25,7 +25,7 @@ void init_terrain(game_t *game)
     sfVector2f scale = {0.65, 0.65};
 
     init_towers(game);
-    game->terrain->clock = sfClock_create();
+    game->towers->clock = sfClock_create();
     game->terrain->background_sprite = sfSprite_create();
     game->terrain->background_texture = sfTexture_createFromFile
                                     ("./utils/imgs/terrain.png", NULL);
@@ -63,7 +63,7 @@ void display_game(sfRenderWindow *window, game_t *game)
                             game->terrain->background_sprite, NULL);
     rotate_tower(game);
     sfRenderWindow_drawSprite(game->utils->window,
-                            game->terrain->tower1_sprite, NULL);
+                            game->towers->tower1_sprite, NULL);
     display_highlight_settings(game, position);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->sprite, NULL);

@@ -61,6 +61,7 @@ int init_game(game_t *game)
     game->enemies_three = malloc(sizeof(enemies_three_t));
     game->castle = malloc(sizeof(castle_t));
     game->settings = malloc(sizeof(settings_t));
+    game->towers = malloc(sizeof(towers_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
