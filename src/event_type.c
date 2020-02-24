@@ -9,17 +9,17 @@
 
 int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game)
 {
-    if ((mouse_position.y >= 476 && mouse_position.y <= 541
+    if ((mouse_position.y >= 473 && mouse_position.y <= 560
         && game->in_menu == 1)
-            && (mouse_position.x >= 483 && mouse_position.x <= 699)
+            && (mouse_position.x >= 472 && mouse_position.x <= 652)
             && (event.type == sfEvtMouseButtonPressed)) {
         game->in_menu = 0;
         game->in_game = 1;
         return 0;
     }
-    if ((mouse_position.y >= 574 && mouse_position.y <= 665
+    if ((mouse_position.y >= 593 && mouse_position.y <= 688
         && game->in_menu == 1)
-        && (mouse_position.x >= 475 && mouse_position.x <= 695)
+        && (mouse_position.x >= 473 && mouse_position.x <= 653)
         && (event.type == sfEvtMouseButtonPressed)) {
         return 1;
     }
