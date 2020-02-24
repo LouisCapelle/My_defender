@@ -50,8 +50,8 @@ void rotate_tower(game_t *game)
 
 void init_towers(game_t *game)
 {
-    sfVector2f origin = {64, 64};
-    sfVector2f pos_tower1 = {330, 540};
+    sfVector2f origin = {70.5, 260};
+    sfVector2f pos_tower1 = {380, 540};
     sfVector2f scale_tower = {0.3, 0.3};
 
     game->terrain->go_to_base = 0;
