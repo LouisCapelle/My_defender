@@ -34,9 +34,17 @@ int move_towers(game_t *game)
     sfSprite_setPosition(game->towers->tower_icon, pos);
 }
 
-int place_towers(game_t *game, sfEvent event)
+int place_towers(game_t *game, sfVector2i position)
 {
-    game->money->is_placing = 0;
+    sfVector2f pos;
+
+    pos.x = position.x;
+    pos.y = position.y;
+    sfRenderWindow_setMouseCursorVisible(game->utils->window, sfTrue);
+    init_tower_icons(game);
+    sfSprite_setTexture(game->towers->tower2_sprite,
+                        game->towers->tower1_texture, sfTrue);
+    sfSprite_setPosition(game->towers->tower2_sprite, pos);
 }
 
 int put_towers(game_t *game, sfEvent event)
@@ -52,6 +60,6 @@ int put_towers(game_t *game, sfEvent event)
     if (event.type == sfEvtMouseButtonReleased
         && game->money->is_placing == 1) {
         game->money->is_placing = 0;
-        sfRenderWindow_setMouseCursorVisible(game->utils->window, sfTrue);
+        place_towers(game, mouse_position);
     }
 }

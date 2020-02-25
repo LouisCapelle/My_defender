@@ -16,4 +16,6 @@ int display_towers(game_t *game)
                             game->towers->tower1_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->tower_icon, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                    game->towers->tower2_sprite, NULL);
 }

@@ -69,6 +69,7 @@ typedef struct terrain{
 typedef struct towers{
     sfSprite *tower1_sprite;
     sfTexture *tower1_texture;
+    sfSprite *tower2_sprite;
     sfClock *clock;
     sfSprite *tower_icon;
     int rotation;

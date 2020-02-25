@@ -52,18 +52,22 @@ void init_towers(game_t *game)
 {
     sfVector2f origin = {70.5, 260};
     sfVector2f pos_tower1 = {380, 540};
+    sfVector2f pos_tower2 = {2000, 2000};
     sfVector2f scale_tower = {0.3, 0.3};
 
     init_tower_icons(game);
     game->towers->go_to_base = 0;
     game->towers->go_to_zero = 1;
     game->towers->tower1_sprite = sfSprite_create();
+    game->towers->tower2_sprite = sfSprite_create();
     game->towers->tower1_texture = sfTexture_createFromFile
                                 ("./utils/imgs/tower.png", NULL);
     sfSprite_setScale(game->towers->tower1_sprite, scale_tower);
+    sfSprite_setScale(game->towers->tower2_sprite, scale_tower);
     sfSprite_setTexture(game->towers->tower1_sprite,
                         game->towers->tower1_texture, sfTrue);
     sfSprite_setOrigin(game->towers->tower1_sprite, origin);
     sfSprite_setPosition(game->towers->tower1_sprite, pos_tower1);
+    sfSprite_setPosition(game->towers->tower2_sprite, pos_tower2);
     sfSprite_setRotation(game->towers->tower1_sprite, 300);
 }
