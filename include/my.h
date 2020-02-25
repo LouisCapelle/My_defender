@@ -83,7 +83,13 @@ int display_settings(game_t *game);
 void rotate_tower(game_t *game);
 void rotate_tower_two(game_t *game, sfTime time, float seconds);
 void init_towers(game_t *game);
-int put_towers(game_t *game);
+int init_tower_icons(game_t *game);
+int put_towers(game_t *game, sfEvent event);
+int move_towers(game_t *game);
+int display_towers(game_t *game);
+
+/*money*/
+int init_money(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);

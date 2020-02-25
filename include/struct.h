@@ -70,10 +70,15 @@ typedef struct towers{
     sfSprite *tower1_sprite;
     sfTexture *tower1_texture;
     sfClock *clock;
+    sfSprite *tower_icon;
     int rotation;
     int go_to_zero;
     int go_to_base;
 } towers_t;
+
+typedef struct money{
+    int is_placing;
+} money_t;
 
 typedef struct castle {
     sfSprite *sprite;
@@ -93,8 +98,8 @@ typedef struct game {
     struct menu_pause *menu_pause;
     struct terrain *terrain;
     struct towers *towers;
+    struct money *money;
     int is_alive;
-    int money;
     int in_menu;
     int in_pause;
     int in_game;

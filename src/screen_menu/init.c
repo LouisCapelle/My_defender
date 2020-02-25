@@ -62,6 +62,7 @@ int init_game(game_t *game)
     game->castle = malloc(sizeof(castle_t));
     game->settings = malloc(sizeof(settings_t));
     game->towers = malloc(sizeof(towers_t));
+    game->money = malloc(sizeof(money_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
@@ -77,6 +78,7 @@ int init_game_two(game_t *game)
         ("utils/imgs/settings_highlight.png", NULL);
     init_pause_menu(game);
     init_terrain(game);
+    init_money(game);
     init_screen_menu(game->utils, game->screen);
     init_enemies_one(game, game->display->clock);
     init_enemies_two(game, game->display->clock);

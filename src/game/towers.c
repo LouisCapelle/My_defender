@@ -54,6 +54,7 @@ void init_towers(game_t *game)
     sfVector2f pos_tower1 = {380, 540};
     sfVector2f scale_tower = {0.3, 0.3};
 
+    init_tower_icons(game);
     game->towers->go_to_base = 0;
     game->towers->go_to_zero = 1;
     game->towers->tower1_sprite = sfSprite_create();
