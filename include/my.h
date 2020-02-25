@@ -90,6 +90,7 @@ int display_towers(game_t *game);
 
 /*money*/
 int init_money(game_t *game);
+int update_money(game_t *game);
 
 /*lib*/
 void redirect_all_stdout(void);

@@ -23,6 +23,7 @@ SRC	=	lib/my_putchar.c \
 		src/settings/settings.c \
 		src/game/enemies/move_enemies.c \
 		src/sound/sound.c \
+		src/game/money/money.c \
 		src/game/towers/put_towers.c \
 		src/game/towers/display_towers.c \
 		src/game/enemies/display_enemies.c \
