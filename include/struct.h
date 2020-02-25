@@ -79,6 +79,9 @@ typedef struct towers{
 
 typedef struct money{
     int is_placing;
+    int in_bank;
+    sfText *bank_text;
+    sfText *bank_int;
 } money_t;
 
 typedef struct castle {

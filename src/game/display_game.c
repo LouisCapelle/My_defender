@@ -55,6 +55,12 @@ int init_castle(game_t *game)
     return 0;
 }
 
+void display_text(game_t *game)
+{
+    sfRenderWindow_drawText(game->utils->window, game->money->bank_text, NULL);
+    sfRenderWindow_drawText(game->utils->window, game->money->bank_int, NULL);
+}
+
 void display_game(sfRenderWindow *window, game_t *game)
 {
     sfVector2i position = sfMouse_getPositionRenderWindow(game->utils->window);
@@ -71,4 +77,5 @@ void display_game(sfRenderWindow *window, game_t *game)
     move_enemies_two(game, game->display->clock);
     move_enemies_three(game, game->display->clock);
     init_castle(game);
+    display_text(game);
 }

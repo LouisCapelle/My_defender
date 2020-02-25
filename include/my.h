@@ -95,6 +95,7 @@ int init_money(game_t *game);
 void redirect_all_stdout(void);
 int my_putchar(char c);
 int my_putstr(char const *str);
+char *my_itoa(int nb);
 
 /*sound*/
 int music_game(game_t *game);

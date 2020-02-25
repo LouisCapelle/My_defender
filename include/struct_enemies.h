@@ -24,9 +24,3 @@ typedef struct enemies_three {
     sfTexture *texture;
     sfVector2f pos;
 } enemies_three_t;
-
-/*typedef struct enemys_four {
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfVector2f pos;
-} enemys_t;*/

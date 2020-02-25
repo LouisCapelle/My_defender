@@ -7,6 +7,7 @@
 
 SRC	=	lib/my_putchar.c \
 		lib/my_putstr.c \
+		lib/convert_int_to_string.c \
 		src/main.c \
 		src/my_defender.c \
 		src/screen_menu/init.c \
@@ -18,12 +19,12 @@ SRC	=	lib/my_putchar.c \
 		src/event_type.c \
 		src/pause_menu/text_pause.c \
 		src/pause_menu/pause_menu.c \
-		src/game/towers.c \
+		src/game/towers/towers.c \
 		src/settings/settings.c \
 		src/game/enemies/move_enemies.c \
 		src/sound/sound.c \
-		src/game/put_towers.c \
-		src/game/display_towers.c \
+		src/game/towers/put_towers.c \
+		src/game/towers/display_towers.c \
 		src/game/enemies/display_enemies.c \
 		src/game/enemies/move_enemies_next.c \
 
