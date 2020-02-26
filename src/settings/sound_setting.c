@@ -15,7 +15,6 @@ int display_sound_settings(game_t * game)
                             game->settings->plus_sprite, NULL);
     sfRenderWindow_drawText(game->utils->window,
                             game->settings->sound_text, NULL);
-    printf("ma bite en ski");
 }
 
 int get_click(game_t *game, sfEvent event)
