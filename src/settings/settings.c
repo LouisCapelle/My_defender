@@ -7,12 +7,8 @@
 
 #include "my.h"
 
-void init_settings(game_t *game)
+void init_set_2(game_t *game)
 {
-    sfVector2f pos = {1100, 20};
-    sfVector2f scale = {0.3, 0.3};
-    sfVector2f pos_esc = {200, 100};
-
     game->settings->sprite = sfSprite_create();
     game->settings->texture = sfTexture_createFromFile
             ("utils/imgs/settings.png", NULL);
@@ -22,6 +18,16 @@ void init_settings(game_t *game)
             ("utils/imgs/esc.jpeg", NULL);
     game->settings->esc_text = sfText_create();
     game->settings->esc_text_two = sfText_create();
+    init_sound_settings(game);
+}
+
+void init_settings(game_t *game)
+{
+    sfVector2f pos = {1100, 20};
+    sfVector2f scale = {0.3, 0.3};
+    sfVector2f pos_esc = {200, 100};
+
+    init_set_2(game);
     sfSprite_setScale(game->settings->sprite, scale);
     sfSprite_setTexture(game->settings->sprite,
             game->settings->texture, sfTrue);
@@ -29,7 +35,6 @@ void init_settings(game_t *game)
     sfSprite_setTexture(game->settings->esc_sprite,
             game->settings->esc_texture, sfTrue);
     sfSprite_setPosition(game->settings->esc_sprite, pos_esc);
-    init_sound_settings(game);
 }
 
 int display_settings(game_t *game)

@@ -27,10 +27,11 @@ SRC	=	lib/my_putchar.c \
 		src/game/towers/put_towers.c \
 		src/game/towers/display_towers.c \
 		src/settings/sound_setting.c \
+		src/pause_menu/init_pause.c \
 		src/game/enemies/display_enemies.c \
 		src/game/enemies/move_enemies_next.c \
 
-CFLAGS	=	-I ./include -g
+CFLAGS	=	-I ./include -g -Wno-deprecated
 
 OBJ	=	$(SRC:.c=.o)
 
