@@ -24,8 +24,17 @@ int set_position(game_t *game)
     sfSprite_setPosition(game->menu_pause->quit_sprite, pos_quit);
 }
 
+int init_highlight(game_t *game)
+{
+    game->menu_pause->play_texture_highlight = sfTexture_createFromFile
+                                    ("./utils/imgs/start_highlight.png", NULL);
+    game->menu_pause->quit_texture_highlight = sfTexture_createFromFile
+                                    ("./utils/imgs/quit_highlight.png", NULL);
+}
+
 int init_pos_2(game_t *game)
 {
+    init_highlight(game);
     game->menu_pause->main_texture = sfTexture_createFromFile
                             ("./utils/imgs/main_menu.png", NULL);
     game->menu_pause->back_texture = sfTexture_createFromFile

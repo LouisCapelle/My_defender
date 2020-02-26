@@ -62,6 +62,7 @@ typedef struct menu_pause {
     sfTexture *back_texture;
     sfSprite *quit_sprite;
     sfTexture *quit_texture;
+    sfTexture *quit_texture_highlight;
     sfFont *font;
     sfText *pause_text;
     sfEvent event;
