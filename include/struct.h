@@ -80,6 +80,8 @@ typedef struct towers{
     int rotation;
     int go_to_zero;
     int go_to_base;
+    sfSprite *square;
+    sfTexture *square_texture;
 } towers_t;
 
 typedef struct money{
