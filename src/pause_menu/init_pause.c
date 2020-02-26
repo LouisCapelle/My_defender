@@ -18,7 +18,7 @@ int set_position(game_t *game)
 
     sfSprite_setScale(game->menu_pause->back_sprite, scale);
     sfSprite_setScale(game->menu_pause->main_sprite, scale_button);
-    sfSprite_setScale(game->menu_pause, quit_scale);
+    sfSprite_setScale(game->menu_pause->quit_sprite, quit_scale);
     sfSprite_setPosition(game->menu_pause->main_sprite, pos_main);
     sfSprite_setPosition(game->menu_pause->play_sprite, pos_play);
     sfSprite_setPosition(game->menu_pause->quit_sprite, pos_quit);
@@ -38,8 +38,8 @@ int init_pos_2(game_t *game)
 
 int init_pause_menu(game_t *game)
 {
-    set_position(game);
     init_pos_2(game);
+    set_position(game);
     sfSprite_setTexture(game->menu_pause->play_sprite,
                         game->screen->play_texture, sfTrue);
     sfSprite_setTexture(game->menu_pause->main_sprite,
