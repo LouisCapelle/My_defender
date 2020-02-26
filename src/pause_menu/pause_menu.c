@@ -14,11 +14,11 @@ int pause_menu(game_t *game)
                             game->menu_pause->back_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->menu_pause->main_sprite, NULL);
-    sfRenderWindow_drawSprite(game->utils->window,
-                            game->menu_pause->play_sprite, NULL);
-    sfRenderWindow_drawSprite(game->utils->window,
-                            game->menu_pause->quit_sprite, NULL);
     sfRenderWindow_drawText(game->utils->window,
                             game->menu_pause->pause_text, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->menu_pause->quit_sprite, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->menu_pause->play_sprite, NULL);
     return 0;
 }
