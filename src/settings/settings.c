@@ -29,6 +29,7 @@ void init_settings(game_t *game)
     sfSprite_setTexture(game->settings->esc_sprite,
             game->settings->esc_texture, sfTrue);
     sfSprite_setPosition(game->settings->esc_sprite, pos_esc);
+    init_sound_settings(game);
 }
 
 int display_settings(game_t *game)
@@ -46,6 +47,7 @@ int display_settings(game_t *game)
     sfText_setString(game->settings->esc_text_two,
         "In the settings menu you can come back to the game !");
     display_settings_menu(game);
+    display_sound_settings(game);
     return 0;
 }
 

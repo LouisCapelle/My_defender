@@ -44,6 +44,10 @@ typedef struct settings {
     sfVector2f pos_text;
     sfTexture *highlight;
     sfFont *font;
+    sfSprite *plus_sprite;
+    sfSprite *moins_sprite;
+    sfTexture *plus_texture;
+    sfTexture *moins_texture;
 } settings_t;
 
 typedef struct menu_pause {

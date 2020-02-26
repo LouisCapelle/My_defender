@@ -78,6 +78,9 @@ int move_enemies_three_next(game_t *game, sfClock *clock, int x, int y);
 /* setting */
 void init_settings(game_t *game);
 int display_settings(game_t *game);
+int init_sound_settings(game_t *game);
+int display_sound_settings(game_t * game);
+int get_click(game_t *game, sfEvent event);
 
 /* towers */
 void rotate_tower(game_t *game);
