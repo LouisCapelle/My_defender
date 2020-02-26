@@ -17,7 +17,20 @@ int display_sound_settings(game_t * game)
 
 int get_click(game_t *game, sfEvent event)
 {
+    sfVector2i mouse = sfMouse_getPositionRenderWindow(game->utils->window);
 
+    if (event.type == sfEvtMouseButtonPressed && game->in_settings == 1
+        && (mouse.x >= 407 && mouse.x <= 443
+        && mouse.y >= 510 && mouse.y <= 543)) {
+        sfMusic_setVolume(game->utils->song,
+                            sfMusic_getVolume(game->utils->song) - 10);
+    }
+    if (event.type == sfEvtMouseButtonPressed && game->in_settings == 1
+        && (mouse.x >= 706 && mouse.x <= 733
+        && mouse.y >= 516 && mouse.y <= 539)) {
+        sfMusic_setVolume(game->utils->song,
+                            sfMusic_getVolume(game->utils->song) + 10);
+    }
 }
 
 int init_sound_settings(game_t *game)
