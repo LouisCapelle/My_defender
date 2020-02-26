@@ -13,12 +13,16 @@ int display_sound_settings(game_t * game)
                             game->settings->moins_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->plus_sprite, NULL);
+    sfRenderWindow_drawText(game->utils->window,
+                            game->settings->sound_text, NULL);
 }
 
 int get_click(game_t *game, sfEvent event)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->utils->window);
 
+    sfText_setString(game->settings->sound_text,
+                my_itoa(sfMusic_getVolume(game->utils->song)));
     if (event.type == sfEvtMouseButtonPressed && game->in_settings == 1
         && (mouse.x >= 407 && mouse.x <= 443
         && mouse.y >= 510 && mouse.y <= 543)) {
@@ -33,6 +37,17 @@ int get_click(game_t *game, sfEvent event)
     }
 }
 
+int init_text_sound(game_t * game)
+{
+    sfVector2f pos = {542, 500};
+    game->settings->sound_text = sfText_create();
+    sfText_setFont(game->settings->sound_text, game->menu_pause->font);
+    sfText_setCharacterSize(game->settings->sound_text, 40);
+    sfText_setPosition(game->settings->sound_text, pos);
+    sfText_setString(game->settings->sound_text,
+                my_itoa(sfMusic_getVolume(game->utils->song)));
+}
+
 int init_sound_settings(game_t *game)
 {
     sfVector2f pos1 = {700, 507};
@@ -40,6 +55,7 @@ int init_sound_settings(game_t *game)
     sfVector2f scale1 = {0.1, 0.1};
     sfVector2f scale2 = {0.07, 0.07};
 
+    init_text_sound(game);
     game->settings->plus_sprite = sfSprite_create();
     game->settings->moins_sprite = sfSprite_create();
     game->settings->moins_texture = sfTexture_createFromFile

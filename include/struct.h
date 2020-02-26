@@ -48,6 +48,7 @@ typedef struct settings {
     sfSprite *moins_sprite;
     sfTexture *plus_texture;
     sfTexture *moins_texture;
+    sfText *sound_text;
 } settings_t;
 
 typedef struct menu_pause {
