@@ -108,5 +108,8 @@ int music_game(game_t *game);
 
 /*castle*/
 int live_castle(game_t *game);
+int update_live_castle(game_t *game);
+int init_live_castle(game_t *game);
+void display_text_castle(game_t *game);
 
 #endif /* !MY_H */

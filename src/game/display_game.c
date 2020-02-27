@@ -81,4 +81,5 @@ void display_game(sfRenderWindow *window, game_t *game)
     move_enemies_three(game, game->display->clock);
     display_text(game);
     live_castle(game);
+    display_text_castle(game);
 }
