@@ -83,6 +83,8 @@ typedef struct towers{
     int go_to_base;
     sfSprite *square;
     sfTexture *square_texture;
+    sfSprite *base_sprite;
+    sfTexture *base_texture;
 } towers_t;
 
 typedef struct money{
