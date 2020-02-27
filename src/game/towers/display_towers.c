@@ -12,6 +12,7 @@ int display_towers(game_t *game)
     if (game->money->is_placing == 1) {
         move_towers(game);
     }
+    display_base_towers(game);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->tower1_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,

@@ -93,6 +93,8 @@ int init_tower_icons(game_t *game);
 int put_towers(game_t *game, sfEvent event);
 int move_towers(game_t *game);
 int display_towers(game_t *game);
+int init_base_towers(game_t *game);
+int display_base_towers(game_t *game);
 
 /*money*/
 int init_money(game_t *game);

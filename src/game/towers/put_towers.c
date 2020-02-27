@@ -12,6 +12,7 @@ int init_tower_icons(game_t *game)
     sfVector2f tower_icon_position = {800, 85};
     sfVector2f icon_scale = {0.2, 0.2};
 
+    init_base_towers(game);
     game->towers->tower_icon = sfSprite_create();
     sfSprite_setScale(game->towers->tower_icon, icon_scale);
     sfSprite_setPosition(game->towers->tower_icon, tower_icon_position);
