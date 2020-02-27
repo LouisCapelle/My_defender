@@ -11,7 +11,7 @@ int navigation_controller(game_t *game)
 {
     if (game->in_menu == 1) {
         display_background(game);
-    } else if (game->in_menu == 0 && game->in_pause == 0) {
+    } else if (game->in_menu == 0 && game->in_pause == 0 && game->is_alive == 1) {
         display_game(game->utils->window, game);
     }
     if (game->in_pause == 1 && game->in_game == 0) {
@@ -19,6 +19,9 @@ int navigation_controller(game_t *game)
     }
     if (game->in_settings == 1 && game->in_game == 0) {
         display_settings(game);
+    }
+    if (game->is_alive == 0 && game->in_game == 1) {
+        display_background(game);
     }
     return 0;
 }

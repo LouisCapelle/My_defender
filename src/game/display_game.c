@@ -40,7 +40,9 @@ int init_castle(game_t *game)
     sfVector2f pos = {1250, 230};
     sfVector2f scale = {0.4, 0.4};
     sfVector2f scale_castle = {1.25, 1.25};
+    int alive = 50;
 
+    game->castle->alive = alive;
     game->castle->sprite = sfSprite_create();
     game->castle->texture = sfTexture_createFromFile
             ("utils/imgs/castle.png", NULL);
@@ -51,7 +53,6 @@ int init_castle(game_t *game)
     sfSprite_rotate(game->castle->sprite, 90);
     sfSprite_setTexture(game->castle->sprite, game->castle->texture, sfTrue);
     sfSprite_setPosition(game->castle->sprite, pos);
-    sfRenderWindow_drawSprite(game->utils->window, game->castle->sprite, NULL);
     return 0;
 }
 
@@ -73,9 +74,11 @@ void display_game(sfRenderWindow *window, game_t *game)
     display_highlight_settings(game, position);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->sprite, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->castle->sprite, NULL);
     move_enemies_one(game, game->display->clock);
     move_enemies_two(game, game->display->clock);
     move_enemies_three(game, game->display->clock);
-    init_castle(game);
     display_text(game);
+    live_castle(game);
 }
