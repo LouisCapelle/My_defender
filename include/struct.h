@@ -98,6 +98,9 @@ typedef struct castle {
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2f pos;
+    int alive;
+    sfText *live_text;
+    sfText *live_int;
 } castle_t;
 
 typedef struct game {
