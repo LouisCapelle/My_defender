@@ -27,7 +27,6 @@ int display_highlight_quit_pause(game_t *game)
     sfVector2i mouse_position
     = sfMouse_getPositionRenderWindow(game->utils->window);
 
-    printf("x: %d, y: %d\n", mouse_position.x, mouse_position.y);
     if (mouse_position.y >= 563 && mouse_position.y <= 660
             && mouse_position.x >= 502 && mouse_position.x <= 681) {
         sfSprite_setTexture(game->menu_pause->quit_sprite,
