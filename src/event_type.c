@@ -42,20 +42,26 @@ int event_type_settings(sfEvent event, sfVector2i mouse_position, game_t *game)
 
 int event_type_pause(sfEvent event, sfVector2i mouse_position, game_t *game)
 {
-    if ((mouse_position.y >= 455 && mouse_position.y <= 529
+    if ((mouse_position.y >= 333 && mouse_position.y <= 429
         && game->in_pause == 1)
-            && (mouse_position.x >= 437 && mouse_position.x <= 802)
+            && (mouse_position.x >= 500 && mouse_position.x <= 680)
             && (event.type == sfEvtMouseButtonPressed)) {
         game->in_pause = 0;
         game->in_game = 1;
     }
-    if ((mouse_position.y >= 553 && mouse_position.y <= 655
+    if ((mouse_position.y >= 451 && mouse_position.y <= 537
         && game->in_pause == 1)
-        && (mouse_position.x >= 437 && mouse_position.x <= 794)
+        && (mouse_position.x >= 440 && mouse_position.x <= 746)
         && (event.type == sfEvtMouseButtonPressed)) {
         game->in_pause = 0;
         game->in_game = 0;
         game->in_menu = 1;
+    }
+    if ((mouse_position.y >= 563 && mouse_position.y <= 657
+        && game->in_pause == 1)
+        && (mouse_position.x >= 500 && mouse_position.x <= 680)
+        && (event.type == sfEvtMouseButtonPressed)) {
+        return 1;
     }
     return 0;
 }
