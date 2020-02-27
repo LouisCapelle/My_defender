@@ -109,4 +109,7 @@ char *my_itoa(int nb);
 /*sound*/
 int music_game(game_t *game);
 
+/*castle*/
+int live_castle(game_t *game);
+
 #endif /* !MY_H */
