@@ -30,6 +30,8 @@ SRC	=	lib/my_putchar.c \
 		src/game/towers/display_base_towers.c \
 		src/settings/sound_setting.c \
 		src/pause_menu/init_pause.c \
+		src/game/build_menu/init_build_menu.c \
+		src/game/build_menu/display_build_menu.c \
 		src/game/enemies/display_enemies.c \
 		src/game/enemies/move_enemies_next.c \
 		src/game/castle/live.c \

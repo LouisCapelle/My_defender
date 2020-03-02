@@ -108,6 +108,14 @@ typedef struct castle {
     sfText *live_int;
 } castle_t;
 
+typedef struct build_menu {
+    sfSprite *build_sprite;
+    sfSprite *blank_sprite;
+    sfTexture *blank_texture;
+    sfTexture *build_texture;
+} build_menu_t;
+
+
 typedef struct game {
     struct castle *castle;
     struct enemies_one *enemies_one;
@@ -121,7 +129,9 @@ typedef struct game {
     struct terrain *terrain;
     struct towers *towers;
     struct money *money;
+    struct build_menu *build_menu;
     int is_alive;
+    int in_build;
     int in_menu;
     int in_pause;
     int in_game;

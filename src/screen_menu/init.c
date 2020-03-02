@@ -63,6 +63,7 @@ int init_game(game_t *game)
     game->settings = malloc(sizeof(settings_t));
     game->towers = malloc(sizeof(towers_t));
     game->money = malloc(sizeof(money_t));
+    game->build_menu = malloc(sizeof(build_menu_t));
     game->is_alive = 1;
     game->in_menu = 1;
     game->in_pause = 0;
@@ -83,6 +84,7 @@ int init_game_two(game_t *game)
     init_enemies_one(game, game->display->clock);
     init_enemies_two(game, game->display->clock);
     init_enemies_three(game, game->display->clock);
+    init_build_menu(game);
     init_castle(game);
     return 0;
 }
