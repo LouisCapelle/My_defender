@@ -30,6 +30,7 @@ int live_castle(game_t *game)
     update_live_castle(game);
     if (game->castle->alive == 0) {
         game->is_alive = 0;
+        game->in_menu = 1;
     }
     update_live_castle(game);
     return 0;
