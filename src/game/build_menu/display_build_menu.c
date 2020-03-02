@@ -11,8 +11,13 @@ int get_build(game_t *game, sfEvent event, sfVector2i mouse_position)
 {
     if (event.type == sfEvtMouseButtonPressed &&
             (mouse_position.x >= 1003 && mouse_position.x <= 1079)
-            && (mouse_position.y >= 34 && mouse_position.y <= 90)) {
+            && (mouse_position.y >= 34 && mouse_position.y <= 90)
+            && game->in_game == 1) {
         game->in_build = 1;
+    }
+    if (event.type == sfEvtKeyPressed && game->in_build == 1
+            && sfKeyboard_isKeyPressed(sfKeyEscape)){
+        game->in_build = 0;
     }
 }
 

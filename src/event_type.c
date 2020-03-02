@@ -75,7 +75,8 @@ int get_escape(game_t *game, sfEvent event)
         return 1;
     }
     if (event.type == sfEvtKeyPressed && game->in_game == 1
-            && sfKeyboard_isKeyPressed(sfKeyEscape)){
+            && sfKeyboard_isKeyPressed(sfKeyEscape)
+            && game->in_build == 0){
         game->in_pause = 1;
         game->in_game = 0;
         return 0;
