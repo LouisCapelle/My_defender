@@ -10,7 +10,7 @@
 int set_position(game_t *game)
 {
     sfVector2f pos_play = {500, 330};
-    sfVector2f pos_main = {440, 450};
+    sfVector2f pos_main = {500, 445};
     sfVector2f pos_quit = {500, 560};
     sfVector2f scale = {1.5, 1.5};
     sfVector2f scale_button = {0.73, 0.73};
@@ -36,7 +36,7 @@ int init_pos_2(game_t *game)
 {
     init_highlight(game);
     game->menu_pause->main_texture = sfTexture_createFromFile
-                            ("./utils/imgs/main_menu.png", NULL);
+                            ("./utils/imgs/menu_button.png", NULL);
     game->menu_pause->back_texture = sfTexture_createFromFile
                             ("./utils/imgs/pause.png", NULL);
     game->menu_pause->play_texture = sfTexture_createFromFile
