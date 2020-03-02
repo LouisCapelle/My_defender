@@ -22,5 +22,6 @@ int pause_menu(game_t *game)
                             game->menu_pause->play_sprite, NULL);
     display_highlight_quit_pause(game);
     display_highlight_play_pause(game);
+    display_highlight_main_pause(game);
     return 0;
 }

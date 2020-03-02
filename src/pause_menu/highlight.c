@@ -22,6 +22,21 @@ int display_highlight_play_pause(game_t *game)
     }
 }
 
+int display_highlight_main_pause(game_t *game)
+{
+    sfVector2i mouse_position
+    = sfMouse_getPositionRenderWindow(game->utils->window);
+
+    if (mouse_position.y >= 448 && mouse_position.y <= 543
+            && mouse_position.x >= 501 && mouse_position.x <= 680) {
+        sfSprite_setTexture(game->menu_pause->main_sprite,
+                            game->menu_pause->main_texture_highlight, sfTrue);
+    } else {
+        sfSprite_setTexture(game->menu_pause->main_sprite,
+                            game->menu_pause->main_texture, sfTrue);
+    }
+}
+
 int display_highlight_quit_pause(game_t *game)
 {
     sfVector2i mouse_position

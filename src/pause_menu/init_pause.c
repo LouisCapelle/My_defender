@@ -30,6 +30,8 @@ int init_highlight(game_t *game)
                                     ("./utils/imgs/start_highlight.png", NULL);
     game->menu_pause->quit_texture_highlight = sfTexture_createFromFile
                                     ("./utils/imgs/quit_highlight.png", NULL);
+    game->menu_pause->main_texture_highlight = sfTexture_createFromFile
+                            ("./utils/imgs/menu_button_highlight.png", NULL);
 }
 
 int init_pos_2(game_t *game)

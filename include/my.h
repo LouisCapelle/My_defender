@@ -61,6 +61,7 @@ void init_text(game_t *game);
 int display_highlight_play_pause(game_t *game);
 int set_position(game_t *game);
 int display_highlight_quit_pause(game_t *game);
+int display_highlight_main_pause(game_t *game);
 
 /* terrain */
 void init_terrain(game_t *game);
