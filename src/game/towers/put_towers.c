@@ -33,6 +33,16 @@ int move_towers(game_t *game)
     sfSprite_setPosition(game->towers->tower_icon, pos);
 }
 
+int check_in_case(game_t *game, sfVector2i position)
+{
+    if ((position.x <= 310 + 40 && position.x >= 310 - 40)
+        && (position.y <= 110 + 40 && position.y >= 110 - 40)) {
+        return 1;
+    }else {
+        return 0;
+    }
+}
+
 int place_towers(game_t *game, sfVector2i position)
 {
     sfVector2f pos;
@@ -45,7 +55,9 @@ int place_towers(game_t *game, sfVector2i position)
     update_money(game);
     sfSprite_setTexture(game->towers->tower2_sprite,
                         game->towers->tower1_texture, sfTrue);
-    sfSprite_setPosition(game->towers->tower2_sprite, pos);
+    if (check_in_case(game, position) ==  1) {
+        sfSprite_setPosition(game->towers->tower2_sprite, pos);
+    }
 }
 
 int put_towers(game_t *game, sfEvent event)
