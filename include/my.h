@@ -66,9 +66,11 @@ int display_highlight_main_pause(game_t *game);
 /* terrain */
 void init_terrain(game_t *game);
 
-/* book */
+/* build */
 int init_build_menu(game_t *game);
 int display_build_icon(game_t *game);
+int get_build(game_t *game, sfEvent event, sfVector2i mouse_position);
+int display_build_menu(game_t *game);
 
 /* enemys */
 int move_enemies_one_next(game_t *game, sfClock *clock, int x, int y);

@@ -104,6 +104,7 @@ int event_type(sfEvent event, utils_t *utils, game_t *game)
         get_escape(game, event);
         get_click(game, event);
         put_towers(game, event);
+        get_build(game, event, mouse_position);
     }
     return 0;
 }
