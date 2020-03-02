@@ -82,4 +82,5 @@ void display_game(sfRenderWindow *window, game_t *game)
     display_text(game);
     live_castle(game);
     display_text_castle(game);
+    live_enemies(game);
 }

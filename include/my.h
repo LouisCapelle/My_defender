@@ -78,6 +78,8 @@ int init_enemies_one(game_t *game, sfClock *clock);
 int init_enemies_three(game_t *game, sfClock *clock);
 int move_enemies_three(game_t *game, sfClock *clock);
 int move_enemies_three_next(game_t *game, sfClock *clock, int x, int y);
+int live_enemies(game_t *game);
+int init_shut_enemies(game_t *game);
 
 /* setting */
 void init_settings(game_t *game);
