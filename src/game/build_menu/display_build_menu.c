@@ -25,6 +25,12 @@ int display_build_menu(game_t *game)
 {
     sfRenderWindow_drawSprite(game->utils->window,
                             game->build_menu->blank_sprite, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->build_menu->tower1_icon, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->build_menu->tower2_icon, NULL);
+    sfRenderWindow_drawSprite(game->utils->window,
+                            game->build_menu->tower3_icon, NULL);
 }
 
 int display_build_icon(game_t *game)

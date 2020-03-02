@@ -113,6 +113,12 @@ typedef struct build_menu {
     sfSprite *blank_sprite;
     sfTexture *blank_texture;
     sfTexture *build_texture;
+    sfSprite *tower1_icon;
+    sfSprite *tower2_icon;
+    sfSprite *tower3_icon;
+    sfTexture *tower1_texture;
+    sfTexture *tower2_texture;
+    sfTexture *tower3_texture;
 } build_menu_t;
 
 
