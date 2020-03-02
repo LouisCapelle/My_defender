@@ -17,6 +17,4 @@ int display_base_towers(game_t *game)
                             game->towers->base3_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->base4_sprite, NULL);
-    sfRenderWindow_drawSprite(game->utils->window,
-                            game->towers->base5_sprite, NULL);
 }

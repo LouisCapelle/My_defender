@@ -90,7 +90,6 @@ typedef struct towers{
     sfSprite *base2_sprite;
     sfSprite *base3_sprite;
     sfSprite *base4_sprite;
-    sfSprite *base5_sprite;
 } towers_t;
 
 typedef struct money{
