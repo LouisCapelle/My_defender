@@ -40,7 +40,7 @@ int init_castle(game_t *game)
     sfVector2f pos = {1250, 230};
     sfVector2f scale = {0.4, 0.4};
     sfVector2f scale_castle = {1.25, 1.25};
-    int alive = 50;
+    static int alive = 50;
 
     game->castle->alive = alive;
     game->castle->sprite = sfSprite_create();

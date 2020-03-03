@@ -26,7 +26,7 @@ int live_enemies(game_t *game)
 {
     int alive = 50;
 
-    game->castle->alive = alive;
+    // game->castle->alive = alive;
     if (sfSprite_getPosition(game->enemies_one->sprite).x
             <= sfSprite_getPosition(game->towers->base1_sprite).x) {
         init_shut_enemies(game);
