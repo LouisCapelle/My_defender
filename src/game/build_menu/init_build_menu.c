@@ -9,10 +9,10 @@
 
 int init_build_icons(game_t *game)
 {
-    sfVector2f pos_1 = {500, 500};
-    sfVector2f pos_2 = {200, 200};
-    sfVector2f pos_3 = {3, 3};
-    sfVector2f scale = {0.4, 0.4};
+    sfVector2f pos_1 = {350, 170};
+    sfVector2f pos_2 = {350, 305};
+    sfVector2f pos_3 = {350, 420};
+    sfVector2f scale = {0.3, 0.3};
 
     sfSprite_setPosition(game->build_menu->tower1_icon, pos_1);
     sfSprite_setPosition(game->build_menu->tower2_icon, pos_2);
