@@ -26,9 +26,9 @@ int display_build_text(game_t *game)
     sfRenderWindow_drawText(game->utils->window,
                             game->build_menu->text_tower1, NULL);
     sfRenderWindow_drawText(game->utils->window,
-                            game->build_menu->text_tower1, NULL);
+                            game->build_menu->text_tower2, NULL);
     sfRenderWindow_drawText(game->utils->window,
-                            game->build_menu->text_tower1, NULL);
+                            game->build_menu->text_tower3, NULL);
 }
 
 int display_build_menu(game_t *game)
