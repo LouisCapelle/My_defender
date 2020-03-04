@@ -21,6 +21,16 @@ int get_build(game_t *game, sfEvent event, sfVector2i mouse_position)
     }
 }
 
+int display_build_text(game_t *game)
+{
+    sfRenderWindow_drawText(game->utils->window,
+                            game->build_menu->text_tower1, NULL);
+    sfRenderWindow_drawText(game->utils->window,
+                            game->build_menu->text_tower1, NULL);
+    sfRenderWindow_drawText(game->utils->window,
+                            game->build_menu->text_tower1, NULL);
+}
+
 int display_build_menu(game_t *game)
 {
     sfRenderWindow_drawSprite(game->utils->window,
@@ -31,6 +41,7 @@ int display_build_menu(game_t *game)
                             game->build_menu->tower2_icon, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->build_menu->tower3_icon, NULL);
+    display_build_text(game);
 }
 
 int display_build_icon(game_t *game)

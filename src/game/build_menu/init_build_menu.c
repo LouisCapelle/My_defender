@@ -22,6 +22,19 @@ int init_build_icons(game_t *game)
     sfSprite_setScale(game->build_menu->tower3_icon, scale);
 }
 
+int init_text_build(game_t *game)
+{
+    game->build_menu->text_tower1 = sfText_create();
+    game->build_menu->text_tower2 = sfText_create();
+    game->build_menu->text_tower3 = sfText_create();
+    sfText_setFont(game->build_menu->text_tower1, game->settings->font);
+    sfText_setFont(game->build_menu->text_tower2, game->settings->font);
+    sfText_setFont(game->build_menu->text_tower3, game->settings->font);
+    sfText_setString(game->build_menu->text_tower1, "bite");
+    sfText_setString(game->build_menu->text_tower2, "bite");
+    sfText_setString(game->build_menu->text_tower3, "bite");
+}
+
 int create_icons(game_t *game)
 {
     game->build_menu->blank_sprite = sfSprite_create();
@@ -64,6 +77,7 @@ int init_build_menu(game_t *game)
 
     create_icons(game);
     set_textures(game);
+    init_text_build(game);
     sfSprite_setPosition(game->build_menu->build_sprite, pos);
     sfSprite_setPosition(game->build_menu->blank_sprite, pos_blank);
     sfSprite_setScale(game->build_menu->build_sprite, scale);
