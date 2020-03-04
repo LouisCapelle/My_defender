@@ -34,7 +34,7 @@ int create_icons(game_t *game)
 int set_textures(game_t *game)
 {
     game->build_menu->blank_texture = sfTexture_createFromFile
-                                    ("./utils/imgs/blank.png", NULL);
+                                    ("./utils/imgs/blank.jpg", NULL);
     game->build_menu->build_texture = sfTexture_createFromFile
                                     ("./utils/imgs/book.png", NULL);
     game->build_menu->tower1_texture = sfTexture_createFromFile
