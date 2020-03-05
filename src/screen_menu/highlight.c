@@ -12,6 +12,8 @@ int display_highlight_play(game_t *game)
     sfVector2i mouse_position
     = sfMouse_getPositionRenderWindow(game->utils->window);
 
+    if (!game)
+        return 84;
     if (mouse_position.y >= 473 && mouse_position.y <= 560
             && mouse_position.x >= 472 && mouse_position.x <= 652) {
         sfSprite_setTexture(game->screen->play_sprite,
@@ -20,6 +22,7 @@ int display_highlight_play(game_t *game)
         sfSprite_setTexture(game->screen->play_sprite,
                             game->screen->play_texture, sfTrue);
     }
+    return 0;
 }
 
 int display_highlight_quit(game_t *game)
@@ -27,6 +30,8 @@ int display_highlight_quit(game_t *game)
     sfVector2i mouse_position
     = sfMouse_getPositionRenderWindow(game->utils->window);
 
+    if (!game)
+        return 84;
     if (mouse_position.y >= 593 && mouse_position.y <= 688
             && mouse_position.x >= 473 && mouse_position.x <= 653) {
         sfSprite_setTexture(game->screen->quit_sprite,
@@ -35,4 +40,5 @@ int display_highlight_quit(game_t *game)
         sfSprite_setTexture(game->screen->quit_sprite,
                             game->screen->quit_texture, sfTrue);
     }
+    return 0;
 }

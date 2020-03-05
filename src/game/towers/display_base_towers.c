@@ -9,6 +9,8 @@
 
 int display_base_towers(game_t *game)
 {
+    if (!game)
+        return 84;
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->base1_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
@@ -17,4 +19,5 @@ int display_base_towers(game_t *game)
                             game->towers->base3_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->base4_sprite, NULL);
+    return 0;
 }

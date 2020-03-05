@@ -39,6 +39,7 @@ SRC	=	lib/my_putchar.c \
 		src/game/castle/live.c \
 		src/game/free_destroy/destroy_all.c \
 		src/game/free_destroy/free_struct.c \
+		src/game/free_destroy/free_struct_next.c \
 
 CFLAGS	=	-I ./include -g -Wno-deprecated
 

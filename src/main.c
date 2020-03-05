@@ -16,28 +16,29 @@ int to_do(void)
     return 0;
 }
 
-int check_error_defender(game_t *game)
+int check_error_defender(game_t *game, display_t *display, menu_t *screen)
 {
     if (my_defender(game) == 84) {
-        sfMusic_destroy(game->utils->song);
-        sfRenderWindow_destroy(game->utils->window);
+        destroy_all(game, display, screen);
         return 84;
     }
-    destroy_all(game);
+    destroy_all(game, display, screen);
     return 0;
 }
 
 int main(int argc, char **argv, char **envp)
 {
     game_t *game = malloc(sizeof(game_t));
+    display_t *display = malloc(sizeof(display_t));
+    menu_t *screen = malloc(sizeof(menu_t));
 
-    if (!game)
+    if (!game || !display || !screen)
         return 84;
     if (argc == 2 && argv[1][0] == '-' && argv[1][1] == 'h') {
         to_do();
         return 0;
     } else if (argc == 1){
-        if (check_error_defender(game) == 84)
+        if (check_error_defender(game, display, screen) == 84)
             return 84;
     } else {
         sfMusic_destroy(game->utils->song);

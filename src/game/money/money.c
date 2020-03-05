@@ -9,6 +9,8 @@
 
 int update_money(game_t *game)
 {
+    if (!game)
+        return 84;
     char *int_text = my_itoa(game->money->in_bank);
     sfText_setString(game->money->bank_int, int_text);
 }
@@ -17,11 +19,14 @@ int init_money(game_t *game)
 {
     sfVector2f pos = {750, 650};
     char *int_text = NULL;
-
+    if (!game)
+        return 84;
     game->money->in_bank = 10000;
     int_text = my_itoa(game->money->in_bank);
     game->money->bank_int = sfText_create();
     game->money->bank_text = sfText_create();
+    if (!game->money->bank_int || !game->money->bank_text)
+        return 84;
     sfText_setPosition(game->money->bank_text, pos);
     sfText_setFont(game->money->bank_text, game->menu_pause->font);
     sfText_setCharacterSize(game->money->bank_text, 40);
@@ -32,4 +37,5 @@ int init_money(game_t *game)
     sfText_setFont(game->money->bank_int, game->menu_pause->font);
     sfText_setCharacterSize(game->money->bank_int, 40);
     sfText_setString(game->money->bank_int, int_text);
+    return 0;
 }

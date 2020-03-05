@@ -9,14 +9,18 @@
 
 int display_towers(game_t *game)
 {
-    if (game->money->is_placing == 1) {
-        move_towers(game);
-    }
-    display_base_towers(game);
+    if (!game)
+        return 84;
+    if (game->money->is_placing == 1)
+        if (move_towers(game) == 84)
+            return 84;
+    if (display_base_towers(game) == 84)
+        return 84;
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->tower1_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->towers->tower_icon, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                     game->towers->tower2_sprite, NULL);
+    return 0;
 }

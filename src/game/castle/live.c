@@ -7,15 +7,19 @@
 
 #include "my.h"
 
-void display_text_castle(game_t *game)
+int display_text_castle(game_t *game)
 {
+    if (!game)
+        return 84;
     sfRenderWindow_drawText(game->utils->window, game->castle->live_text, NULL);
     sfRenderWindow_drawText(game->utils->window, game->castle->live_int, NULL);
+    return 0;
 }
 
 int live_castle(game_t *game)
 {
-    init_live_castle(game);
+    if (!game || init_live_castle(game) == 84)
+        return 84;
     if (sfSprite_getPosition(game->enemies_three->sprite).x >= 985) {
         game->castle->alive = game->castle->alive - 10;
     }
@@ -24,6 +28,15 @@ int live_castle(game_t *game)
         game->castle->alive = game->castle->alive - 10;
     }
     update_live_castle(game);
+    if (live_castle_next(game) == 84)
+        return 84;
+    return 0;
+}
+
+int live_castle_next(game_t *game)
+{
+    if (!game)
+        return 84;
     if (sfSprite_getPosition(game->enemies_two->sprite).x >= 985) {
         game->castle->alive = game->castle->alive - 10;
     }
@@ -48,6 +61,8 @@ int init_live_castle(game_t *game)
     sfVector2f pos = {500, 650};
     char *int_text = NULL;
 
+    if (!game)
+        return 84;
     int_text = my_itoa(game->castle->alive);
     game->castle->live_int = sfText_create();
     game->castle->live_text = sfText_create();

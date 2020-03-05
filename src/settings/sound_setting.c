@@ -9,18 +9,23 @@
 
 int display_sound_settings(game_t * game)
 {
+    if (!game)
+        return 84;
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->moins_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->plus_sprite, NULL);
     sfRenderWindow_drawText(game->utils->window,
                             game->settings->sound_text, NULL);
+    return 0;
 }
 
 int get_click(game_t *game, sfEvent event)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->utils->window);
 
+    if (!game)
+        return 84;
     sfText_setString(game->settings->sound_text,
                 my_itoa(sfMusic_getVolume(game->utils->song)));
     if (event.type == sfEvtMouseButtonPressed && game->in_settings == 1
@@ -35,33 +40,53 @@ int get_click(game_t *game, sfEvent event)
         sfMusic_setVolume(game->utils->song,
                             sfMusic_getVolume(game->utils->song) + 10);
     }
+    return 0;
 }
 
 int init_text_sound(game_t * game)
 {
     sfVector2f pos = {542, 500};
+
+    if (!game)
+        return 84;
     game->settings->sound_text = sfText_create();
+    if (!game->settings->sound_text)
+        return 84;
     sfText_setFont(game->settings->sound_text, game->menu_pause->font);
     sfText_setCharacterSize(game->settings->sound_text, 40);
     sfText_setPosition(game->settings->sound_text, pos);
     sfText_setString(game->settings->sound_text,
                 my_itoa(sfMusic_getVolume(game->utils->song)));
+    return 0;
 }
 
 int init_sound_settings(game_t *game)
 {
-    sfVector2f pos1 = {700, 507};
-    sfVector2f pos2 = {400, 500};
-    sfVector2f scale1 = {0.1, 0.1};
-    sfVector2f scale2 = {0.07, 0.07};
-
-    init_text_sound(game);
+    if (!game || init_text_sound(game) == 84)
+        return 84;
     game->settings->plus_sprite = sfSprite_create();
     game->settings->moins_sprite = sfSprite_create();
     game->settings->moins_texture = sfTexture_createFromFile
                                     ("./utils/imgs/moins.png", NULL);
     game->settings->plus_texture = sfTexture_createFromFile
                                     ("./utils/imgs/plus.png", NULL);
+    if (!game->settings->plus_sprite || !game->settings->moins_sprite
+    || !game->settings->moins_texture || !game->settings->plus_texture)
+        return 84;
+    if (init_sound_settings_next(game) == 84)
+        return 84;
+    return 0;
+}
+
+int init_sound_settings_next(game_t *game)
+{
+    sfVector2f pos1 = {700, 507};
+    sfVector2f pos2 = {400, 500};
+    sfVector2f scale1 = {0.1, 0.1};
+    sfVector2f scale2 = {0.07, 0.07};
+
+    if (!game)
+        return 84;
     sfSprite_setTexture(game->settings->plus_sprite,
                         game->settings->plus_texture, sfTrue);
     sfSprite_setTexture(game->settings->moins_sprite,
@@ -70,4 +95,5 @@ int init_sound_settings(game_t *game)
     sfSprite_setPosition(game->settings->plus_sprite, pos1);
     sfSprite_setScale(game->settings->moins_sprite, scale1);
     sfSprite_setScale(game->settings->plus_sprite, scale2);
+    return 0;
 }

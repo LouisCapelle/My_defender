@@ -9,13 +9,16 @@
 
 int display_background(game_t *game)
 {
+    if (!game)
+        return 84;
     sfRenderWindow_clear(game->utils->window, sfBlack);
     sfSprite_setTexture(game->display->sprite, game->display->texture, sfFalse);
     sfSprite_setPosition(game->display->sprite, game->display->pos);
     sfRenderWindow_drawSprite(game->utils->window, game->display->sprite, NULL);
-    display_highlight_play(game);
-    display_highlight_quit(game);
-    display_menu(game);
+    if (display_highlight_play(game) == 84
+    || display_highlight_quit(game) == 84
+    || display_menu(game) == 84)
+        return 84;
     return 0;
 }
 
@@ -23,6 +26,8 @@ int display_menu(game_t *game)
 {
     sfVector2f scale_play;
     sfVector2f scale_quit;
+    if (!game)
+        return 84;
     scale_play.x = 0.73;
     scale_play.y = 0.73;
     scale_quit.x = 0.73;
@@ -39,4 +44,5 @@ int display_menu(game_t *game)
     sfSprite_setPosition(game->screen->quit_sprite, game->screen->pos_quit);
     sfRenderWindow_drawSprite(game->utils->window,
     game->screen->quit_sprite, NULL);
+    return 0;
 }

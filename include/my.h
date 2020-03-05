@@ -41,13 +41,15 @@ int init_game_two(game_t *game);
 /* essentials */
 
 int my_defender(game_t *game);
+int navigation_controller_next(game_t *game);
 int event_type(sfEvent event, utils_t *utils, game_t *game);
 sfRenderWindow *create_window(display_t *display);
 int to_do(void);
 int display_background(game_t *game);
 int display_menu(game_t *game);
+int display_game_next(game_t *game);
 int navigation_controller(game_t *game);
-void display_game(sfRenderWindow *window, game_t *game);
+int display_game(sfRenderWindow *window, game_t *game);
 
 /* welcome menu */
 int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game);
@@ -57,7 +59,7 @@ int display_highlight_quit(game_t *game);
 /* pause menu */
 int pause_menu(game_t *game);
 int init_pause_menu(game_t *game);
-void init_text(game_t *game);
+int init_text(game_t *game);
 int display_highlight_play_pause(game_t *game);
 int set_position(game_t *game);
 int display_highlight_quit_pause(game_t *game);
@@ -86,20 +88,23 @@ int init_enemies_one(game_t *game, sfClock *clock);
 int init_enemies_three(game_t *game, sfClock *clock);
 int move_enemies_three(game_t *game, sfClock *clock);
 int move_enemies_three_next(game_t *game, sfClock *clock, int x, int y);
+int move_enemies_three_next_two(game_t *game, sfClock *clock, int x, int y);
 int live_enemies(game_t *game);
 int init_shut_enemies(game_t *game);
 
 /* setting */
-void init_settings(game_t *game);
+int init_settings(game_t *game);
+int init_set_2(game_t *game);
 int display_settings(game_t *game);
 int init_sound_settings(game_t *game);
 int display_sound_settings(game_t * game);
 int get_click(game_t *game, sfEvent event);
 
 /* towers */
-void rotate_tower(game_t *game);
-void rotate_tower_two(game_t *game, sfTime time, float seconds);
-void init_towers(game_t *game);
+int rotate_tower(game_t *game);
+int rotate_tower_two(game_t *game, sfTime time, float seconds);
+int init_towers(game_t *game);
+int init_towers_next(game_t *game);
 int init_tower_icons(game_t *game);
 int put_towers(game_t *game, sfEvent event);
 int move_towers(game_t *game);
@@ -119,20 +124,24 @@ char *my_itoa(int nb);
 
 /*sound*/
 int music_game(game_t *game);
+int init_sound_settings_next(game_t *game);
 
 /*castle*/
 int live_castle(game_t *game);
+int live_castle_next(game_t *game);
 int update_live_castle(game_t *game);
 int init_live_castle(game_t *game);
-void display_text_castle(game_t *game);
+int display_text_castle(game_t *game);
 
 /*destroy*/
 int destroy_all(game_t *game, display_t *display, menu_t *screen);
-int check_error_defender(game_t *game);
+int check_error_defender(game_t *game, display_t *display, menu_t *screen);
 int destroy_utils(game_t *game, display_t *display);
 int destroy_sprite(game_t *game, menu_t *screen, display_t *display);
 int destroy_texture(game_t *game, menu_t *screen, display_t *display);
 int free_map(game_t *game);
 int check_malloc_game(game_t *game);
+int destroy_texture_next(game_t *game, menu_t *screen, display_t *display);
+int destroy_sprite_next(game_t *game, menu_t *screen, display_t *display);
 
 #endif /* !MY_H */

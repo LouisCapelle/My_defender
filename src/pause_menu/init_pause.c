@@ -15,6 +15,8 @@ int set_position(game_t *game)
     sfVector2f scale = {1.5, 1.5};
     sfVector2f scale_button = {0.73, 0.73};
 
+    if (!game)
+        return 84;
     sfSprite_setScale(game->menu_pause->back_sprite, scale);
     sfSprite_setScale(game->menu_pause->main_sprite, scale_button);
     sfSprite_setScale(game->menu_pause->quit_sprite, scale_button);
@@ -27,17 +29,25 @@ int set_position(game_t *game)
 
 int init_highlight(game_t *game)
 {
+    if (!game)
+        return 84;
     game->menu_pause->play_texture_highlight = sfTexture_createFromFile
                                     ("./utils/imgs/start_highlight.png", NULL);
     game->menu_pause->quit_texture_highlight = sfTexture_createFromFile
                                     ("./utils/imgs/quit_highlight.png", NULL);
     game->menu_pause->main_texture_highlight = sfTexture_createFromFile
                             ("./utils/imgs/menu_button_highlight.png", NULL);
+    if (!game->menu_pause->play_texture_highlight
+    || !game->menu_pause->quit_texture_highlight
+    || !game->menu_pause->main_texture_highlight)
+        return 84;
+    return 0;
 }
 
 int init_pos_2(game_t *game)
 {
-    init_highlight(game);
+    if (!game || init_highlight(game) == 84)
+        return 84;
     game->menu_pause->main_texture = sfTexture_createFromFile
                             ("./utils/imgs/menu_button.png", NULL);
     game->menu_pause->back_texture = sfTexture_createFromFile
@@ -50,12 +60,18 @@ int init_pos_2(game_t *game)
     game->menu_pause->main_sprite = sfSprite_create();
     game->menu_pause->play_sprite = sfSprite_create();
     game->menu_pause->quit_sprite = sfSprite_create();
+    if (!game->menu_pause->main_texture || !game->menu_pause->back_texture
+    || !game->menu_pause->play_texture || !game->menu_pause->quit_texture
+    || !game->menu_pause->back_sprite || !game->menu_pause->main_sprite
+    || !game->menu_pause->play_sprite || !game->menu_pause->quit_sprite)
+        return 84;
+    return 0;
 }
 
 int init_pause_menu(game_t *game)
 {
-    init_pos_2(game);
-    set_position(game);
+    if (!game || init_pos_2(game) == 84 || set_position(game) == 84)
+        return 84;
     sfSprite_setTexture(game->menu_pause->play_sprite,
                         game->menu_pause->play_texture, sfTrue);
     sfSprite_setTexture(game->menu_pause->main_sprite,
@@ -64,6 +80,7 @@ int init_pause_menu(game_t *game)
                         game->menu_pause->back_texture, sfTrue);
     sfSprite_setTexture(game->menu_pause->quit_sprite,
                         game->menu_pause->quit_texture, sfTrue);
-    init_text(game);
+    if (init_text(game) == 84)
+        return 84;
     return 0;
 }
