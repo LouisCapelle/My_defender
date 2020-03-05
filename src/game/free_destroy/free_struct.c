@@ -7,6 +7,57 @@
 
 #include "my.h"
 
+int destroy_utils(game_t *game, display_t *display)
+{
+    if (!game)
+        return 84;
+    sfFont_destroy(game->menu_pause->font);
+    sfText_destroy(game->menu_pause->pause_text);
+    sfClock_destroy(display->clock);
+}
+
+int destroy_sprite(game_t *game, menu_t *screen, display_t *display)
+{
+    if (!game || !screen || !display)
+        return 84;
+    sfSprite_destroy(game->menu_pause->back_sprite);
+    sfSprite_destroy(game->menu_pause->main_sprite);
+    sfSprite_destroy(game->menu_pause->play_sprite);
+    sfSprite_destroy(game->menu_pause->quit_sprite);
+    sfSprite_destroy(screen->play_sprite);
+    sfSprite_destroy(screen->quit_sprite);
+    sfSprite_destroy(display->sprite);
+    sfSprite_destroy(game->build_menu->blank_sprite);
+    sfSprite_destroy(game->build_menu->build_sprite);
+    sfSprite_destroy(game->build_menu->tower1_icon);
+    sfSprite_destroy(game->build_menu->tower2_icon);
+    sfSprite_destroy(game->build_menu->tower3_icon);
+
+}
+
+int destroy_texture(game_t *game, menu_t *screen, display_t *display)
+{
+    if (!game || !screen || !display)
+        return 84;
+    sfTexture_destroy(game->settings->highlight);
+    sfTexture_destroy(game->menu_pause->play_texture_highlight);
+    sfTexture_destroy(game->menu_pause->quit_texture_highlight);
+    sfTexture_destroy(game->menu_pause->main_texture_highlight);
+    sfTexture_destroy(game->menu_pause->main_texture);
+    sfTexture_destroy(game->menu_pause->back_texture);
+    sfTexture_destroy(game->menu_pause->play_texture);
+    sfTexture_destroy(game->menu_pause->quit_texture);
+    sfTexture_destroy(screen->play_texture);
+    sfTexture_destroy(screen->play_texture_highlight);
+    sfTexture_destroy(screen->quit_texture_highlight);
+    sfTexture_destroy(display->texture);
+    sfTexture_destroy(game->build_menu->blank_texture);
+    sfTexture_destroy(game->build_menu->build_texture);
+    sfTexture_destroy(game->build_menu->tower1_texture);
+    sfTexture_destroy(game->build_menu->tower2_texture);
+    sfTexture_destroy(game->build_menu->tower3_texture);
+}
+
 int free_map(game_t *game)
 {
     free(game->utils);
@@ -22,6 +73,7 @@ int free_map(game_t *game)
     free(game->towers);
     free(game->money);
     free(game->build_menu);
+    return 0;
 }
 int check_malloc_game(game_t *game)
 {

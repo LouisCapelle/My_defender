@@ -72,6 +72,7 @@ int display_build_icon(game_t *game);
 int get_build(game_t *game, sfEvent event, sfVector2i mouse_position);
 int display_build_menu(game_t *game);
 int init_text_build(game_t *game);
+int set_texture_next(game_t *game);
 
 /* enemys */
 int move_enemies_one_next(game_t *game, sfClock *clock, int x, int y);
@@ -126,6 +127,12 @@ int init_live_castle(game_t *game);
 void display_text_castle(game_t *game);
 
 /*destroy*/
-int destroy_all(game_t *game);
+int destroy_all(game_t *game, display_t *display, menu_t *screen);
+int check_error_defender(game_t *game);
+int destroy_utils(game_t *game, display_t *display);
+int destroy_sprite(game_t *game, menu_t *screen, display_t *display);
+int destroy_texture(game_t *game, menu_t *screen, display_t *display);
+int free_map(game_t *game);
+int check_malloc_game(game_t *game);
 
 #endif /* !MY_H */

@@ -22,6 +22,7 @@ int set_position(game_t *game)
     sfSprite_setPosition(game->menu_pause->main_sprite, pos_main);
     sfSprite_setPosition(game->menu_pause->play_sprite, pos_play);
     sfSprite_setPosition(game->menu_pause->quit_sprite, pos_quit);
+    return 0;
 }
 
 int init_highlight(game_t *game)

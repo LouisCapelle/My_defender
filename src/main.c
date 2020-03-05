@@ -16,6 +16,17 @@ int to_do(void)
     return 0;
 }
 
+int check_error_defender(game_t *game)
+{
+    if (my_defender(game) == 84) {
+        sfMusic_destroy(game->utils->song);
+        sfRenderWindow_destroy(game->utils->window);
+        return 84;
+    }
+    destroy_all(game);
+    return 0;
+}
+
 int main(int argc, char **argv, char **envp)
 {
     game_t *game = malloc(sizeof(game_t));
@@ -26,17 +37,12 @@ int main(int argc, char **argv, char **envp)
         to_do();
         return 0;
     } else if (argc == 1){
-        if (my_defender(game) == 84) {
-            sfMusic_destroy(game->utils->song);
-            sfRenderWindow_destroy(game->utils->window);
+        if (check_error_defender(game) == 84)
             return 84;
-        }
-        sfMusic_destroy(game->utils->song);
-        sfRenderWindow_destroy(game->utils->window);
-        destroy_all(game);
     } else {
         sfMusic_destroy(game->utils->song);
         sfRenderWindow_destroy(game->utils->window);
         return 84;
     }
+    return 0;
 }
