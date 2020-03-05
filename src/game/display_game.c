@@ -20,7 +20,7 @@ int display_highlight_settings(game_t *game, sfVector2i position)
     }
 }
 
-void init_terrain(game_t *game)
+int init_terrain(game_t *game)
 {
     sfVector2f scale = {0.65, 0.65};
 

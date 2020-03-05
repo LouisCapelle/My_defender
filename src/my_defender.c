@@ -14,11 +14,12 @@ int my_defender(game_t *game)
 
     if (!game)
         return 84;
-    if (init_game(game) == 84 || music_game(game))
+    if (init_game(game) == 84 || music_game(game) == 84)
         return 84;
     init_settings(game);
     while (sfRenderWindow_isOpen(game->utils->window)) {
-        navigation_controller(game);
+        if (navigation_controller(game) == 84)
+            return 84;
         sfRenderWindow_display(game->utils->window);
         if (event_type(event, game->utils, game) == 1)
             return 0;

@@ -7,11 +7,13 @@
 
 #include "my.h"
 
-void to_do(void)
+int to_do(void)
 {
-    my_putstr("You have to defend your castle\n");
-    my_putstr("Buy and place some buildings to block or kill your enemies\n");
-    my_putstr("If the enemies touch the castle you lost, so be careful !\n");
+    if (my_putstr("You have to defend your castle\n") == 84
+    || my_putstr("Buy some buildings to block or kill your enemies\n") == 84
+    || my_putstr("If the enemies touch the castle you lost !\n") == 84)
+        return 84;
+    return 0;
 }
 
 int main(int argc, char **argv, char **envp)
@@ -31,6 +33,7 @@ int main(int argc, char **argv, char **envp)
         }
         sfMusic_destroy(game->utils->song);
         sfRenderWindow_destroy(game->utils->window);
+        destroy_all(game);
     } else {
         sfMusic_destroy(game->utils->song);
         sfRenderWindow_destroy(game->utils->window);

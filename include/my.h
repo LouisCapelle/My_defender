@@ -43,7 +43,7 @@ int init_game_two(game_t *game);
 int my_defender(game_t *game);
 int event_type(sfEvent event, utils_t *utils, game_t *game);
 sfRenderWindow *create_window(display_t *display);
-void to_do(void);
+int to_do(void);
 int display_background(game_t *game);
 int display_menu(game_t *game);
 int navigation_controller(game_t *game);
@@ -64,7 +64,7 @@ int display_highlight_quit_pause(game_t *game);
 int display_highlight_main_pause(game_t *game);
 
 /* terrain */
-void init_terrain(game_t *game);
+int init_terrain(game_t *game);
 
 /* build */
 int init_build_menu(game_t *game);
@@ -124,5 +124,8 @@ int live_castle(game_t *game);
 int update_live_castle(game_t *game);
 int init_live_castle(game_t *game);
 void display_text_castle(game_t *game);
+
+/*destroy*/
+int destroy_all(game_t *game);
 
 #endif /* !MY_H */

@@ -64,27 +64,30 @@ int init_game(game_t *game)
     game->towers = malloc(sizeof(towers_t));
     game->money = malloc(sizeof(money_t));
     game->build_menu = malloc(sizeof(build_menu_t));
-    game->is_alive = 1;
-    game->in_menu = 1;
-    game->in_pause = 0;
-    game->in_settings = 0;
+    if (check_malloc_game(game) == 84)
+        return 84;
     init_game_two(game);
     return 0;
 }
 
 int init_game_two(game_t *game)
 {
+    game->is_alive = 1;
+    game->in_menu = 1;
+    game->in_pause = 0;
+    game->in_settings = 0;
     game->utils->window = init_struct_display(game->display, game->utils);
     game->settings->highlight = sfTexture_createFromFile
         ("utils/imgs/settings_highlight.png", NULL);
-    init_pause_menu(game);
-    init_terrain(game);
-    init_money(game);
-    init_screen_menu(game->utils, game->screen);
-    init_enemies_one(game, game->display->clock);
-    init_enemies_two(game, game->display->clock);
-    init_enemies_three(game, game->display->clock);
-    init_build_menu(game);
-    init_castle(game);
+    if (init_pause_menu(game) == 84
+    || init_terrain(game) == 84
+    || init_money(game) == 84
+    || init_screen_menu(game->utils, game->screen) == 84
+    || init_enemies_one(game, game->display->clock) == 84
+    || init_enemies_two(game, game->display->clock) == 84
+    || init_enemies_three(game, game->display->clock) == 84
+    || init_build_menu(game) == 84
+    || init_castle(game) == 84)
+        return 84;
     return 0;
 }
