@@ -7,9 +7,8 @@
 
 #include "my.h"
 
-int my_defender(void)
+int my_defender(game_t *game)
 {
-    game_t *game = malloc(sizeof(game_t));
     sfEvent event;
     sfVector2i mouse_pos;
 
@@ -24,7 +23,5 @@ int my_defender(void)
         if (event_type(event, game->utils, game) == 1)
             return 0;
     }
-    sfMusic_destroy(game->utils->song);
-    sfRenderWindow_destroy(game->utils->window);
     return 0;
 }

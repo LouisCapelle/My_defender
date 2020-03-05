@@ -40,7 +40,7 @@ int init_game_two(game_t *game);
 
 /* essentials */
 
-int my_defender(void);
+int my_defender(game_t *game);
 int event_type(sfEvent event, utils_t *utils, game_t *game);
 sfRenderWindow *create_window(display_t *display);
 void to_do(void);
