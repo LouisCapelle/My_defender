@@ -119,6 +119,9 @@ typedef struct build_menu {
     sfTexture *tower1_texture;
     sfTexture *tower2_texture;
     sfTexture *tower3_texture;
+    sfText *text_tower1;
+    sfText *text_tower2;
+    sfText *text_tower3;
 } build_menu_t;
 
 

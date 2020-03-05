@@ -9,10 +9,10 @@
 
 int init_build_icons(game_t *game)
 {
-    sfVector2f pos_1 = {500, 500};
-    sfVector2f pos_2 = {200, 200};
-    sfVector2f pos_3 = {3, 3};
-    sfVector2f scale = {0.4, 0.4};
+    sfVector2f pos_1 = {350, 170};
+    sfVector2f pos_2 = {350, 305};
+    sfVector2f pos_3 = {350, 420};
+    sfVector2f scale = {0.3, 0.3};
 
     sfSprite_setPosition(game->build_menu->tower1_icon, pos_1);
     sfSprite_setPosition(game->build_menu->tower2_icon, pos_2);
@@ -34,7 +34,7 @@ int create_icons(game_t *game)
 int set_textures(game_t *game)
 {
     game->build_menu->blank_texture = sfTexture_createFromFile
-                                    ("./utils/imgs/blank.png", NULL);
+                                    ("./utils/imgs/blank.jpg", NULL);
     game->build_menu->build_texture = sfTexture_createFromFile
                                     ("./utils/imgs/book.png", NULL);
     game->build_menu->tower1_texture = sfTexture_createFromFile
@@ -64,6 +64,7 @@ int init_build_menu(game_t *game)
 
     create_icons(game);
     set_textures(game);
+    init_text_build(game);
     sfSprite_setPosition(game->build_menu->build_sprite, pos);
     sfSprite_setPosition(game->build_menu->blank_sprite, pos_blank);
     sfSprite_setScale(game->build_menu->build_sprite, scale);

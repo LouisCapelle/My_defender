@@ -35,6 +35,7 @@ SRC	=	lib/my_putchar.c \
 		src/game/enemies/display_enemies.c \
 		src/game/enemies/move_enemies_next.c \
 		src/game/enemies/live_enemies.c \
+		src/game/build_menu/init_text_build.c \
 		src/game/castle/live.c \
 
 CFLAGS	=	-I ./include -g -Wno-deprecated

@@ -13,7 +13,10 @@ int event_type_menu(sfEvent event, sfVector2i mouse_position, game_t *game)
         && game->in_menu == 1)
             && (mouse_position.x >= 472 && mouse_position.x <= 652)
             && (event.type == sfEvtMouseButtonPressed)) {
+        game->is_alive = 1;
         game->in_menu = 0;
+        game->in_pause = 0;
+        game->in_settings = 0;
         game->in_game = 1;
         return 0;
     }
