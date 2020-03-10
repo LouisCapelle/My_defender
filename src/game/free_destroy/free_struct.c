@@ -16,9 +16,9 @@ int destroy_utils(game_t *game, display_t *display)
     sfText_destroy(game->menu_pause->pause_text);
     sfText_destroy(game->build_menu->text_tower1);
     sfText_destroy(game->build_menu->text_tower2);
+    sfText_destroy(game->build_menu->text_tower3);
     sfText_destroy(game->settings->esc_text);
     sfText_destroy(game->settings->esc_text_two);
-    sfText_destroy(game->build_menu->text_tower3);
     sfText_destroy(game->castle->live_int);
     sfText_destroy(game->castle->live_text);
     sfText_destroy(game->settings->sound_text);
@@ -114,18 +114,5 @@ int free_map(game_t *game)
     free(game->towers);
     free(game->money);
     free(game->build_menu);
-    return 0;
-}
-int check_malloc_game(game_t *game)
-{
-    if (!game)
-        return 84;
-    if (!game->utils || !game->display || !game->screen || !game->menu_pause
-    || !game->terrain || !game->enemies_one || !game->enemies_two 
-    || !game->enemies_three || !game->castle || !game->settings || !game->towers
-    || !game->money || !game->build_menu) {
-        free_map(game);
-        return 84;
-    }
     return 0;
 }

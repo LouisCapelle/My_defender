@@ -135,7 +135,6 @@ int display_text_castle(game_t *game);
 
 /*destroy*/
 int destroy_all(game_t *game, display_t *display, menu_t *screen);
-int check_error_defender(game_t *game, display_t *display, menu_t *screen);
 int destroy_utils(game_t *game, display_t *display);
 int destroy_sprite(game_t *game, menu_t *screen, display_t *display);
 int destroy_texture(game_t *game, menu_t *screen, display_t *display);
