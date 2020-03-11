@@ -63,13 +63,15 @@ int init_towers(game_t *game)
     game->towers->go_to_zero = 1;
     game->towers->tower1_sprite = sfSprite_create();
     game->towers->tower2_sprite = sfSprite_create();
+    game->towers->tower3_sprite = sfSprite_create();
     game->towers->tower1_texture = sfTexture_createFromFile
                                 ("./utils/imgs/tower.png", NULL);
     if (!game->towers->tower1_sprite || !game->towers->tower2_sprite
     || !game->towers->tower1_texture)
         return 84;
-    sfSprite_setScale(game->towers->tower1_sprite, scale_tower);
+    init_towers_next(game);
     sfSprite_setScale(game->towers->tower2_sprite, scale_tower);
+    sfSprite_setScale(game->towers->tower3_sprite, scale_tower);
     return 0;
 }
 
@@ -81,11 +83,7 @@ int init_towers_next(game_t *game)
 
     if (!game)
         return 84;
-    sfSprite_setTexture(game->towers->tower1_sprite,
-                        game->towers->tower1_texture, sfTrue);
-    sfSprite_setOrigin(game->towers->tower1_sprite, origin);
-    sfSprite_setPosition(game->towers->tower1_sprite, pos_tower1);
     sfSprite_setPosition(game->towers->tower2_sprite, pos_tower2);
-    sfSprite_setRotation(game->towers->tower1_sprite, 300);
+    sfSprite_setPosition(game->towers->tower3_sprite, pos_tower2);
     return 0;
 }

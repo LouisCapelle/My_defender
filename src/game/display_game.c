@@ -82,7 +82,7 @@ int display_game(sfRenderWindow *window, game_t *game)
     sfRenderWindow_clear(window, sfBlack);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->terrain->background_sprite, NULL);
-    if (rotate_tower(game) == 84 || display_towers(game) == 84
+    if (display_towers(game) == 84
     || display_highlight_settings(game, position) == 84)
         return 84;
     sfRenderWindow_drawSprite(game->utils->window,
