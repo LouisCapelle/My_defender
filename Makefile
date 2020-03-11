@@ -20,6 +20,7 @@ SRC	=	lib/my_putchar.c \
 		src/pause_menu/text_pause.c \
 		src/pause_menu/pause_menu.c \
 		src/game/towers/towers.c \
+		src/game/towers/init_towers_icons.c \
 		src/settings/settings.c \
 		src/game/enemies/move_enemies.c \
 		src/sound/sound.c \

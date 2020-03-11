@@ -78,8 +78,13 @@ typedef struct towers{
     sfSprite *tower1_sprite;
     sfTexture *tower1_texture;
     sfSprite *tower2_sprite;
+    sfTexture *tower2_texture;
+    sfSprite *tower3_sprite;
+    sfTexture *tower3_texture;
     sfClock *clock;
     sfSprite *tower_icon;
+    sfSprite *tower2_icon;
+    sfSprite *tower3_icon;
     int rotation;
     int go_to_zero;
     int go_to_base;

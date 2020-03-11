@@ -7,27 +7,6 @@
 
 #include "my.h"
 
-int init_tower_icons(game_t *game)
-{
-    sfVector2f tower_icon_position = {800, 85};
-    sfVector2f icon_scale = {0.2, 0.2};
-
-    if (!game || init_base_towers(game) == 84)
-        return 84;
-    game->towers->tower_icon = sfSprite_create();
-    if (!game->towers->tower_icon)
-        return 84;
-    sfSprite_setScale(game->towers->tower_icon, icon_scale);
-    sfSprite_setPosition(game->towers->tower_icon, tower_icon_position);
-    sfSprite_setRotation(game->towers->tower_icon, 180);
-    game->towers->square = sfSprite_create();
-    if (!game->towers->square)
-        return 84;
-    sfSprite_setTexture(game->towers->tower_icon,
-                        game->towers->tower1_texture, sfTrue);
-    return 0;
-}
-
 int move_towers(game_t *game)
 {
     sfVector2f pos;
