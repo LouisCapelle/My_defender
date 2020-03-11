@@ -155,7 +155,7 @@ typedef struct game {
 
 typedef struct score_game {
     sfVector2f pos;
-    int score;
+    float score;
     sfText *live_text;
     sfText *live_int;
 }score_t;

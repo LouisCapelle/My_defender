@@ -20,7 +20,7 @@ int score(game_t *game)
 {
     if (!game || init_score_game(game) == 84)
         return 84;
-    game->score_game->score += 1;
+    game->score_game->score += 0.5;
     update_live_castle(game);
     return 0;
 }
