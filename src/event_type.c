@@ -96,7 +96,6 @@ int get_escape(game_t *game, sfEvent event)
 int event_type(sfEvent event, utils_t *utils, game_t *game)
 {
     sfVector2i mouse_position = sfMouse_getPositionRenderWindow(utils->window);
-
     while (sfRenderWindow_pollEvent(utils->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(utils->window);

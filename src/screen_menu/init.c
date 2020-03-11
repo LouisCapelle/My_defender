@@ -68,6 +68,7 @@ int init_game(game_t *game)
     game->towers = malloc(sizeof(towers_t));
     game->money = malloc(sizeof(money_t));
     game->build_menu = malloc(sizeof(build_menu_t));
+    game->score_game = malloc(sizeof(score_t));
     if (init_game_two(game) == 84)
         return 84;
     return 0;

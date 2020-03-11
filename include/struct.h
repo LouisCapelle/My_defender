@@ -144,6 +144,7 @@ typedef struct game {
     struct towers *towers;
     struct money *money;
     struct build_menu *build_menu;
+    struct score_game *score_game;
     int is_alive;
     int in_build;
     int in_menu;
@@ -151,3 +152,10 @@ typedef struct game {
     int in_game;
     int in_settings;
 } game_t;
+
+typedef struct score_game {
+    sfVector2f pos;
+    int score;
+    sfText *live_text;
+    sfText *live_int;
+}score_t;

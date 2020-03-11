@@ -90,7 +90,6 @@ int move_enemies_three(game_t *game, sfClock *clock);
 int move_enemies_three_next(game_t *game, sfClock *clock, int x, int y);
 int move_enemies_three_next_two(game_t *game, sfClock *clock, int x, int y);
 int live_enemies(game_t *game);
-int init_shut_enemies(game_t *game);
 
 /* setting */
 int init_settings(game_t *game);
@@ -145,5 +144,11 @@ int free_map(game_t *game);
 int check_malloc_game(game_t *game);
 int destroy_texture_next(game_t *game, menu_t *screen, display_t *display);
 int destroy_sprite_next(game_t *game, menu_t *screen, display_t *display);
+
+/*score*/
+int display_score(game_t *game);
+int score(game_t *game);
+int update_score(game_t *game);
+int init_score_game(game_t *game);
 
 #endif /* !MY_H */

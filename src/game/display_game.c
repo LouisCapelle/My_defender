@@ -104,7 +104,8 @@ int display_game_next(game_t *game)
         return 84;
     display_text(game);
     if (live_castle(game) == 84 || display_text_castle(game) == 84
-    || display_build_icon(game) == 84 || live_enemies(game) == 84)
+    || display_build_icon(game) == 84 || live_enemies(game) == 84
+    || score(game) || display_score(game) == 84)
         return 84;
     return 0;
 }
