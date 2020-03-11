@@ -32,12 +32,12 @@ int init_text_build(game_t *game)
     sfText_setFont(game->build_menu->text_tower1, game->menu_pause->font);
     sfText_setFont(game->build_menu->text_tower2, game->menu_pause->font);
     sfText_setFont(game->build_menu->text_tower3, game->menu_pause->font);
-    sfText_setString(game->build_menu->text_tower1, "bite");
-    sfText_setString(game->build_menu->text_tower2, "bite");
-    sfText_setString(game->build_menu->text_tower3, "bite");
-    sfText_setCharacterSize(game->build_menu->text_tower1, 20);
-    sfText_setCharacterSize(game->build_menu->text_tower2, 20);
-    sfText_setCharacterSize(game->build_menu->text_tower3, 20);
+    sfText_setString(game->build_menu->text_tower1, "Canon de force 1 - 1500$");
+    sfText_setString(game->build_menu->text_tower2, "Canon de force 2 - 2500$");
+    sfText_setString(game->build_menu->text_tower3, "Canon de force 3 - 3500$");
+    sfText_setCharacterSize(game->build_menu->text_tower1, 30);
+    sfText_setCharacterSize(game->build_menu->text_tower2, 30);
+    sfText_setCharacterSize(game->build_menu->text_tower3, 30);
     sfText_setColor(game->build_menu->text_tower1, sfBlack);
     sfText_setColor(game->build_menu->text_tower2, sfBlack);
     sfText_setColor(game->build_menu->text_tower3, sfBlack);
