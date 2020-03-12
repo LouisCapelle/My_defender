@@ -91,7 +91,7 @@ int init_game_two(game_t *game)
     || init_enemies_two(game, game->display->clock) == 84
     || init_enemies_three(game, game->display->clock) == 84
     || init_build_menu(game) == 84
-    || init_castle(game) == 84)
+    || init_castle(game) == 84 || score(game) == 84)
         return 84;
     return 0;
 }

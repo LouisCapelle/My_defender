@@ -150,5 +150,6 @@ int display_score(game_t *game);
 int score(game_t *game);
 int update_score(game_t *game);
 int init_score_game(game_t *game);
+int display_score_end(game_t *game);
 
 #endif /* !MY_H */

@@ -7,10 +7,20 @@
 
 #include "my.h"
 
+int display_score_end(game_t *game)
+{
+    if (!game)
+        return 84;
+    sfRenderWindow_drawText(game->utils->window, game->score_game->live_text, NULL);
+    sfRenderWindow_drawText(game->utils->window, game->score_game->live_int, NULL);
+    return 0;
+}
+
 int display_score(game_t *game)
 {
     if (!game)
         return 84;
+    update_score(game);
     sfRenderWindow_drawText(game->utils->window, game->score_game->live_text, NULL);
     sfRenderWindow_drawText(game->utils->window, game->score_game->live_int, NULL);
     return 0;
@@ -20,13 +30,11 @@ int score(game_t *game)
 {
     if (!game || init_score_game(game) == 84)
         return 84;
-    game->score_game->score += 0.5;
-    update_live_castle(game);
-    return 0;
 }
 
 int update_score(game_t *game)
 {
+    game->score_game->score += 0.5;
     char *int_text = my_itoa(game->score_game->score);
     sfText_setString(game->score_game->live_int, int_text);
 }
